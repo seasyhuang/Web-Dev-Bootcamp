@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form class="" action="registration-form.html" method="post">
+      <label for="fname">First Name:</label>
+      <input id="fname" type="text" name="firstName" placeholder="John" required>
+
+      <label for="lname">Last Name:</label>
+      <input id="lname" type="text" name="lastName" placeholder="Smith" required>
+
+      <div>
+        <!-- for spacing: can use br, div, p -->
+        <!-- make sure -label for- and -input id- are matching -->
+        <!-- to link all 3 options (so you can only choose 1 out of the 3, set name=same) -->
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male">
+
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female">
+
+        <label for="other">Other</label>
+        <input type="radio" name="gender" id="other">
+      </div>
+
+      <!-- <br> -->
+      <!-- name is used behind the scenes to understand how to send data -->
+      <label for="email">Email:</label>
+      <input type="email" name="email" placeholder="etc@etc.com" required id="email" required>
+      <label for="password">Password:</label>
+      <input type="password" name="password" placeholder="" required id="password" required minlength="5" maxlength="10">
+
+      <div>
+        <!-- second way of doing requirements for password -->
+        <!-- pattern attribute: regex? -->
+        <!-- title attribute: error message that is displayed-->
+        <label for="password2">Password:</label>
+        <input type="password2" name="password2" required id="password2" required pattern=".{5,10}" title="Password must be between 5-10 characters">
+      </div>
+
+      <!-- <br> -->
+      <!-- second way of using label: put the selects INSIDE the label -->
+      <label>Birthday:
+        <select name="month">
+          <option>Month</option>
+          <option value="1">Jan</option>
+          <option value="2">Feb</option>
+          <!-- if you wanted to send 1 instead of jan as the value when submitting the form -->
+        </select>
+        <select name="day">
+          <option >Day</option>
+          <option>1</option>
+          <option>2</option>
+        </select>
+        <select name="year">
+          <option>Year</option>
+          <option>2000</option>
+          <option>2001</option>
+      </label>
+      </select>
+
+      <br>
+      <label for="check">I agree to the terms and conditions:</label>
+      <input type="checkbox" name="checkbox" id="check">
+
+      <br>
+      <button type="submit" name="submit">Submit</button>
+    </form>
+  </body>
+</html>
