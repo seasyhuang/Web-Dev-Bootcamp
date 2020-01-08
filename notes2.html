@@ -38,9 +38,9 @@
           </ul>
         </ol>
       </ul>
-      <li>Lecture 44</li>
+
+      <li>Lecture 44: colours in CSS</li>
       <ul>
-        <li>colours in CSS</li>
         <li>there are 147 named colours in CSS: <a href="https://colours.neilorangepeel.com/">this site has all of them here</a></li>
         <li><strong>hexidecimal:</strong> base 16</li>
         <ul>
@@ -58,9 +58,9 @@
           <li style ="color: rgba(0, 255, 255, 0.5)">alpha = 0.5</li>
         </ul>
       </ul>
-      <li>Lecture 45</li>
+
+      <li>Lecture 45: colour and background</li>
       <ul>
-        <li>colour and background</li>
         <li>see the about me 2 html</li>
         <li><strong>background: colour;</strong></li>
         <li>image: use <strong>url(linktourl);</strong></li>
@@ -68,9 +68,9 @@
         <li><strong>border: 5px solid purple;</strong> - this is the shortcut way that combines three properties</li>
         <li>three attributes are: width, style (solid, dashed, etc), colour</li>
       </ul>
-      <li>Lecture 48</li>
+
+      <li>Lecture 48: CSS selectors</li>
       <ul>
-        <li>CSS selectors:</li>
         <li>rememeber that a selector is: <strong>selector </strong>{ ... } </li>
         <li><strong>element selector:</strong></li>
         <ul>
@@ -94,14 +94,54 @@
           <li>< input type="checkbox" name="" value="" <strong>checked</strong> ></li>
         </ul>
       </ul>
-      <li>Lecture 49</li>
+
+      <li>Lecture 49: Intro to chrome inspector tool</li>
+
+      <li>Lecture 50: More advanced selectors</li>
       <ul>
-        <li>Intro to chrome inspector tool</li>
-        <li></li>
+        <li>there are at least 30 good ones that you "need to memorize"</li>
+        <li>go over: 5 of those ^</li>
+        <ol>
+          <li>* - selects everything</li>
+          <li>Descendant selector</li>
+            <ul>
+              <li>li a</li>
+              <li>will select everything that is an <strong>a</strong> inside an <strong>li</strong> </li>
+            </ul>
+          <li>Adjacent selector</li>
+            <ul>
+              <li>h4 + ul</li>
+              <li>siblings: all <strong>ul</strong>'s that come <em>after</em> an <strong>h4</strong> (on the same level) </li>
+            </ul>
+          <li>Attribute selector</li>
+            <ul>
+              <li>element[attribute] </li>
+              <li>a[href="http://www.google.com"] - will affect all links that go to google </li>
+              <li>input[type="checkbox"] - will select all checkboxes</li>
+            </ul>
+          <li>nth-of-type selector</li>
+            <ul>
+              <li>element:nth-of-type(3) </li>
+              <li>li:nth-of-type(3): this will selected the 3rd</li>
+              <li>li:nth-of-type(odd): will select all the odd ones</li>
+            </ul>
+        </ol>
       </ul>
-      <li>Lecture </li>
-      <li>Lecture </li>
-      <li>Lecture </li>
+
+      <li>Lecture 52: specificity and the cascade</li>
+      <ul>
+        <li>inheritance and specificity</li>
+        <li>li will inherit attributes from its parent: ul or ol</li>
+        <li>any attribute in the parent will affect its children</li>
+        <li>ex: <strong>body</strong> attributes - affect all children (everything in body)</li>
+        <li>in inspector tool - striked out means the attribute was overrided</li>
+        <li><strong>class</strong> will override plain element selector</li>
+        <li><strong>id</strong> will override <strong>class</strong> and plain element selector</li>
+        <li><a href="https://specificity.keegan.st">specificity calculator</a></li>
+      </ul>
+
+      <li>Lecture 53/54/55: Selectors practice</li>
+
     </ul>
   </body>
 </html>
