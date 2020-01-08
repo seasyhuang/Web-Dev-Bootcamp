@@ -28,21 +28,77 @@
           <li>can put it directly in the tag (< li style = "colour: purple;") - old, this is not a good idea because we want to keep things separate</li>
           <li>style tag: in the head, < style type="text/css"> css here < /style></li>
           <ul>
-              <li>what happens when there is conflicting style information? (see about-me.html) <strong>the one that comes after wins</strong></li>
+              <li>what happens when there is conflicting style information? (see about-me.html) <strong>the one that comes after "wins"</strong> - it will override the first instance</li>
+              <li>good for quick, debugging purposes</li>
           </ul>
           <li>best: use a <strong>link tag</strong> - separate .css file</li>
           <ul>
             <li>use < link rel="stylesheet" href="/path/to/css"> in the head to link to css file</li>
+            <li>in our example, we linked <em>app.css</em> to <em>about-me.html</em> via the href attribute</li>
           </ul>
         </ol>
       </ul>
       <li>Lecture 44</li>
       <ul>
+        <li>colours in CSS</li>
+        <li>there are 147 named colours in CSS: <a href="https://colours.neilorangepeel.com/">this site has all of them here</a></li>
+        <li><strong>hexidecimal:</strong> base 16</li>
+        <ul>
+          <li>red - green - blue</li>
+          <li>first two digits are red, next two are green, last two are blue</li>
+          <li style ="color: #FF0000">#FF0000 is red</li>
+        </ul>
+        <li><strong>RGB:</strong></li>
+        <ul>
+          <li>color: rgb(0, 255, 255);</li>
+          <li style ="color: rgb(0, 255, 255)">rgb(0, 255, 255) is turquoise</li>
+          <li>color: rgba(0, 255, 255, 1); for alpha, transparency</li>
+          <li style ="color: rgba(0, 255, 255, 1)">alpha = 1</li>
+          <li style ="color: rgba(0, 255, 255, 0.75)">alpha = 0.75</li>
+          <li style ="color: rgba(0, 255, 255, 0.5)">alpha = 0.5</li>
+        </ul>
+      </ul>
+      <li>Lecture 45</li>
+      <ul>
+        <li>colour and background</li>
+        <li>see the about me 2 html</li>
+        <li><strong>background: colour;</strong></li>
+        <li>image: use <strong>url(linktourl);</strong></li>
+        <li><strong>background-repeat: no-repeat;</strong> otherwise, background image will tile</li>
+        <li><strong>border: 5px solid purple;</strong> - this is the shortcut way that combines three properties</li>
+        <li>three attributes are: width, style (solid, dashed, etc), colour</li>
+      </ul>
+      <li>Lecture 48</li>
+      <ul>
+        <li>CSS selectors:</li>
+        <li>rememeber that a selector is: <strong>selector </strong>{ ... } </li>
+        <li><strong>element selector:</strong></li>
+        <ul>
+          <li>select all instances of a given element</li>
+          <li>ex: select all li's, all div's, etc</li>
+        </ul>
+        <li><strong>id selector:</strong></li>
+        <ul>
+          <li>add an id as an attribute to any element (as a "hook")</li>
+          <li>will select only the element with that id</li>
+          <li>you need to identify the id in a css with # in front of it</li>
+          <li>#special { ... }</li>
+          <li>great for picking out a single element</li>
+        </ul>
+        <li><strong>class selector</strong></li>
+        <ul>
+          <li>like an id but you can apply to as many elements on the page as you want </li>
+          <li>you need to identify the class in a css with . in front of it</li>
+          <li>.completed { ... }</li>
+          <li>note: you can make a checkbox already checked when loaded by adding the attribute "checked"</li>
+          <li>< input type="checkbox" name="" value="" <strong>checked</strong> ></li>
+        </ul>
+      </ul>
+      <li>Lecture 49</li>
+      <ul>
+        <li>Intro to chrome inspector tool</li>
         <li></li>
       </ul>
-      <li>Lecture </li>
-      <li>Lecture </li>
-      <li>Lecture </li>
       <li>Lecture </li>
       <li>Lecture </li>
       <li>Lecture </li>

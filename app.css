@@ -1,7 +1,13 @@
 h1 {
-  color:red;
+  color: red;
+  border: 5px solid purple;
 }
 
 li {
   color:orange;
+}
+
+body {
+  background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FaZwev9_Y58A%2Fmaxresdefault.jpg&f=1&nofb=1);
+  background-repeat: no-repeat;
 }
