@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+}
+
+h1 {
+  font-family: arial;
+  text-align: center;
+}
+
+p {
+  font-family: georgia;
+  text-align: justify;
+}
+
+span {
+  font-size: 1.2em;
+}
+
+h2 {
+  font-family: 'Yesteryear', cursive;
+  text-align: right;
+}
