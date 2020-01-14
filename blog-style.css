@@ -1,0 +1,33 @@
+body {
+  width: 50%;
+  margin: 20px auto;
+  border: #bdc3c7 20px solid;
+  padding: 20px;
+  font-family: Source Sans Pro;
+}
+
+h2 {
+  text-transform:capitalize;
+  color: #2c3e50;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post p:nth-of-type(1) {
+  border-left: #bdc3c7 5px solid;
+  padding-left: 5px;
+
+}
+
+.date {
+  color: #3498db;
+  letter-spacing: 3px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+hr {
+  border: 1px #f1f1f1 solid;
+}
