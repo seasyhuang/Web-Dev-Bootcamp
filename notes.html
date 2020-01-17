@@ -3,149 +3,155 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
 
-    <h1>Notes</h1>
+    <iframe src="notes-navbar.html" frameborder="0" width="100%" height="70px"></iframe>
 
-    <ul>
-      <li>Lecture 19:</li>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Basics</h1>
+        <h4><a href="https://www.udemy.com/course/the-web-developer-bootcamp/">The Web Developer Bootcamp </a></h2>
+      </div>
+
       <ul>
-        <li>first-page.html</li>
-        <li>Useful resource: https://developer.mozilla.org/en-US/</li>
-        <li>To set up boilerplate (DOCTYPE, etc): type "html" and hit enter</li>
-        <li>< head > element provides metadata</li>
-        <li>< title > is the name of the tab - also important for search engines</li>
-      </ul>
-
-      <li>Lecture 20:</li>
-      <ul>
-        <li>MDN element reference: all the elements in html</li>
-        <li>Headers are block-level elements (each get own line) vs. in-line elements</li>
-        <li>Paragraphs are also block-level</li>
-        <li>Don't use < b >, use < strong > (HTML 5) <strong>(this is in-line)</strong></li>
-        <li>< i > --> < em > <em>(this is in line)</em> - italics</li>
-      </ul>
-
-      <li>Lecture 21: Lists</li>
-      <ul>
-        <li>Ordered List: < ol ></li>
-        <li>Unordered: < ul ></li>
-        <li>Both need list items: < li ></li>
-      </ul>
-
-      <li>Assignment 1</li>
-
-      <li>Lecture 24: div and span</li>
-      <ul>
-        <li>Ways to group things</li>
-        <li>Divs are block-level elements</li>
-        <li>Spans are in-line</li>
-      </ul>
-
-      <li>Lecture 25: attributes</li>
-      <ul>
-        <li>Key-value pairs</li>
-        <li>Ex: "src" and "href"</li>
-        <li>< img src="" alt=""></li>
-        <li>< a href="#"></a></li>
-        <li>Two types of links: relative (in the file system) and absolute</li>
-      </ul>
-
-      <li>Assignment 2</li>
-      <ul>
-        <li>assignment2.html</li>
-      </ul>
-
-      <li><h4>Unit 4</h4></li>
-      <li>Lecture 28: Objectives</li>
-      <ol>
-        <li>HTML tables</li>
-        <li>HTML forms</li>
-      </ol>
-
-      <li>Lecture 29: Tables</li>
-      <ul>
-        <li>table: table --> tr for each row --> td for each cell</li>
-        <li>thead and tbody: heading goes into thead</li>
-        <li>example in first-page.html</li>
-      </ul>
-
-      <li>Assignment 3 (pokemon)</li>
-      <ul>
-        <li>note: can't do "img style=width:50px"</li>
-        <li>need to do img width="50"</li>
-      </ul>
-
-      <li>Lecture 32: Intro to Forms</li>
-      <ul>
-        <li>use the form tag</li>
-        <li>< form class="" action="index.html" method="post">< /form></li>
+        <li>Lecture 19:</li>
         <ul>
-          <li>action: what url to send form data to (ideally: to our own backend)</li>
-          <li>method: what type of http request (get, post, etc)</li>
-          <li>Searches = get request</li>
-          <li>Sign ups = post request (add to db)</li>
-          <li>adding the form tag makes the form BLOCK</li>
-          <li>otherwise, collection of inputs is just inline</li>
-        </ul>
-        <li>input tag is what goes into the forms - user inputs, text, etc</li>
-        <ul>
-          <li>< input type="text" name="" value=""></li>
-          <li>type - ex. text, password</li>
-          <li>example in first-page.html</li>
-          <li>name - sent in the http request (pay attention to the url)</li>
-          <li>name attribute is used behind the scenes to understand how to send data</li>
+          <li>first-page.html</li>
+          <li>Useful resource: https://developer.mozilla.org/en-US/</li>
+          <li>To set up boilerplate (DOCTYPE, etc): type "html" and hit enter</li>
+          <li>< head > element provides metadata</li>
+          <li>< title > is the name of the tab - also important for search engines</li>
         </ul>
 
-      <li>Lecture 35: Labels</li>
-      <ul>
-        <li>important for visually imparied (screenreaders)</li>
-        <li>put the input inside the label tag. two types of syntax:</li>
+        <li>Lecture 20:</li>
+        <ul>
+          <li>MDN element reference: all the elements in html</li>
+          <li>Headers are block-level elements (each get own line) vs. in-line elements</li>
+          <li>Paragraphs are also block-level</li>
+          <li>Don't use < b >, use < strong > (HTML 5) <strong>(this is in-line)</strong></li>
+          <li>< i > --> < em > <em>(this is in line)</em> - italics</li>
+        </ul>
+
+        <li>Lecture 21: Lists</li>
+        <ul>
+          <li>Ordered List: < ol ></li>
+          <li>Unordered: < ul ></li>
+          <li>Both need list items: < li ></li>
+        </ul>
+
+        <li>Assignment 1</li>
+
+        <li>Lecture 24: div and span</li>
+        <ul>
+          <li>Ways to group things</li>
+          <li>Divs are block-level elements</li>
+          <li>Spans are in-line</li>
+        </ul>
+
+        <li>Lecture 25: attributes</li>
+        <ul>
+          <li>Key-value pairs</li>
+          <li>Ex: "src" and "href"</li>
+          <li>< img src="" alt=""></li>
+          <li>< a href="#"></a></li>
+          <li>Two types of links: relative (in the file system) and absolute</li>
+        </ul>
+
+        <li>Assignment 2</li>
+        <ul>
+          <li>assignment2.html</li>
+        </ul>
+
+        <li><h4>Unit 4</h4></li>
+        <li>Lecture 28: Objectives</li>
         <ol>
-          <li>< label>Username: < input type="text" value="username">< /label></li>
-          <li>  < label for="username">Username: </ label > < input id="username" value="username2"></li>
-          <li>link label to input using <strong>label for="something"</strong> and atrribute ex. <strong>radio id</strong> </li>
+          <li>HTML tables</li>
+          <li>HTML forms</li>
         </ol>
-      </ul>
 
-      <li>Lecture 36: Form validations</li>
-      <ul>
-        <li>simple validations: making sure that things are not left blank</li>
-        <li>add the attribute like this: < input required ></li>
-        <li>if you set the type = email, it will make sure that there is an @ sign in the email</li>
-      </ul>
-
-      <li>Lecture 37: Dropdown and Radio Buttons</li>
-      <ul>
-        <li>radio - one choice: ex. cats, dogs (must be in the form)</li>
+        <li>Lecture 29: Tables</li>
         <ul>
-          <li>< input type="radio" name="something" value="DOG" ></li>
-          <li>set "name" attribute (in 2+ radio inputs) to link the radio buttons</li>
-          <li>if a button is the last thing in the form, will automatically submit</li>
-          <li>value is the thing you're sending</li>
+          <li>table: table --> tr for each row --> td for each cell</li>
+          <li>thead and tbody: heading goes into thead</li>
+          <li>example in first-page.html</li>
         </ul>
-        <li>select tag - Dropdown menus</li>
+
+        <li>Assignment 3 (pokemon)</li>
         <ul>
-          <li>< option > for choices</li>
-          <li>to change what value is sent (instead of sending text inside the option tag), specify the value attribute</li>
-          <li>set <strong>"name"</strong> attribute of select to change what is sent in the request (url)</li>
+          <li>note: can't do "img style=width:50px"</li>
+          <li>need to do img width="50"</li>
         </ul>
-        <li>checkbox - can choose multiple or one </li>
-        <li>textarea</li>
+
+        <li>Lecture 32: Intro to Forms</li>
         <ul>
-          <li>when you want user to be able to submit more text</li>
-          <li>< textarea name="name" rows="8" cols="80"></li>
+          <li>use the form tag</li>
+          <li>< form class="" action="index.html" method="post">< /form></li>
+          <ul>
+            <li>action: what url to send form data to (ideally: to our own backend)</li>
+            <li>method: what type of http request (get, post, etc)</li>
+            <li>Searches = get request</li>
+            <li>Sign ups = post request (add to db)</li>
+            <li>adding the form tag makes the form BLOCK</li>
+            <li>otherwise, collection of inputs is just inline</li>
+          </ul>
+          <li>input tag is what goes into the forms - user inputs, text, etc</li>
+          <ul>
+            <li>< input type="text" name="" value=""></li>
+            <li>type - ex. text, password</li>
+            <li>example in first-page.html</li>
+            <li>name - sent in the http request (pay attention to the url)</li>
+            <li>name attribute is used behind the scenes to understand how to send data</li>
+          </ul>
+
+        <li>Lecture 35: Labels</li>
+        <ul>
+          <li>important for visually imparied (screenreaders)</li>
+          <li>put the input inside the label tag. two types of syntax:</li>
+          <ol>
+            <li>< label>Username: < input type="text" value="username">< /label></li>
+            <li>  < label for="username">Username: </ label > < input id="username" value="username2"></li>
+            <li>link label to input using <strong>label for="something"</strong> and atrribute ex. <strong>radio id</strong> </li>
+          </ol>
+        </ul>
+
+        <li>Lecture 36: Form validations</li>
+        <ul>
+          <li>simple validations: making sure that things are not left blank</li>
+          <li>add the attribute like this: < input required ></li>
+          <li>if you set the type = email, it will make sure that there is an @ sign in the email</li>
+        </ul>
+
+        <li>Lecture 37: Dropdown and Radio Buttons</li>
+        <ul>
+          <li>radio - one choice: ex. cats, dogs (must be in the form)</li>
+          <ul>
+            <li>< input type="radio" name="something" value="DOG" ></li>
+            <li>set "name" attribute (in 2+ radio inputs) to link the radio buttons</li>
+            <li>if a button is the last thing in the form, will automatically submit</li>
+            <li>value is the thing you're sending</li>
+          </ul>
+          <li>select tag - Dropdown menus</li>
+          <ul>
+            <li>< option > for choices</li>
+            <li>to change what value is sent (instead of sending text inside the option tag), specify the value attribute</li>
+            <li>set <strong>"name"</strong> attribute of select to change what is sent in the request (url)</li>
+          </ul>
+          <li>checkbox - can choose multiple or one </li>
+          <li>textarea</li>
+          <ul>
+            <li>when you want user to be able to submit more text</li>
+            <li>< textarea name="name" rows="8" cols="80"></li>
+          </ul>
+        </ul>
+
+        <li>Assignment 4: Form exercise</li>
         </ul>
       </ul>
+    </div>
 
-      <li>Assignment 4: Form exercise</li>
-
-
-      </ul>
-
-
-    </ul>
 
   </body>
 </html>

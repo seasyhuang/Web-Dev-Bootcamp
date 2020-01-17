@@ -2,111 +2,120 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Intermediate CSS</title>
   </head>
   <body>
-    <h1>Intermediate CSS </h1>
-    <h2>Unit 6</h2>
-    <ul>
-      <li>Lecture 56: Unit Objectives</li>
+
+    <iframe src="notes-navbar.html" frameborder="0" width="100%" height="70px"></iframe>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Intermediate CSS </h1>
+        <h2>Unit 6</h2>
+      </div>
+
       <ul>
-        <li>Fonts</li>
-        <li>Google fonts</li>
-        <li>CSS Box Model</li>
-        <li>Exercises:</li>
-        <ol>
-          <li>Tic Tac Toe</li>
-          <li>Image portfolio</li>
-          <li>Blog</li>
-        </ol>
-      </ul>
-      <li>Lecture 57: Texts and Fonts</li>
-      <ol>
-        <li>text.html</li>
-        <li>texts.css</li>
-      </ol>
-      <ul>
-        <li>font-family</li>
-        <li>font-size</li>
+        <li>Lecture 56: Unit Objectives</li>
         <ul>
-          <li>em font size - dynamic</li>
-          <li>usage: font-size: 2.0em; -- would make whatever it is 2x the size of the parent</li>
-          <li>max parent is usally about 16px, but most people will set the max by setting a font size in the body</li>
+          <li>Fonts</li>
+          <li>Google fonts</li>
+          <li>CSS Box Model</li>
+          <li>Exercises:</li>
+          <ol>
+            <li>Tic Tac Toe</li>
+            <li>Image portfolio</li>
+            <li>Blog</li>
+          </ol>
         </ul>
-        <li>span - a way to group elements without a linebreak</li>
-      </ul>
-
-      <li>Lecture 58: More Text and Fonts</li>
-      <ul>
-        <li>font-weight - goes from 100-800 (in some fonts)</li>
-        <li>line-height - changes line spacing</li>
-        <li>text-align - left, center, right, justified</li>
-        <li>text-decoration - underline, line-through, etc</li>
-      </ul>
-
-      <li>Lecture 59/60: </li>
-      <ul>
-        <li><a href="https://fonts.google.com/">using google fonts</a> </li>
-        <li>copy the link href into the < head > of the project</li>
-      </ul>
-
-      <li>Lecture 61: Introduction to the Box Model</li>
-      <img src="https://pressupinc.com/wp-content/uploads/2014/01/box-model.png" alt="">
-      <ul>
-        <li>Padding, margin, border, etc</li>
-        <li>padding - between content and border</li>
-        <li>margin - between border on outside and anything else (use to put space between two elements) </li>
-        <li>Box model example</li>
+        <li>Lecture 57: Texts and Fonts</li>
         <ol>
-          <li>boxmodel.html</li>
-          <li>boxmodel-style.css</li>
+          <li>text.html</li>
+          <li>texts.css</li>
         </ol>
-        <li>width/height: you can use px or percentages (%), which makes it responsive</li>
-        <li><span style="color: green;">padding</span> - inside the element, between border and content-content </li>
-        <li><span style="color: orange;">margin</span> - ouside the element, between elementss</li>
-        <li>shortcut for margin values - <span style="font-family: courier; font-size: 0.9em">margin: top right bottom left</span> </li>
+        <ul>
+          <li>font-family</li>
+          <li>font-size</li>
+          <ul class="inner">
+            <li>em font size - dynamic</li>
+            <li>usage: font-size: 2.0em; -- would make whatever it is 2x the size of the parent</li>
+            <li>max parent is usally about 16px, but most people will set the max by setting a font size in the body</li>
+          </ul>
+          <li>span - a way to group elements without a linebreak</li>
+        </ul>
+
+        <li>Lecture 58: More Text and Fonts</li>
+        <ul>
+          <li>font-weight - goes from 100-800 (in some fonts)</li>
+          <li>line-height - changes line spacing</li>
+          <li>text-align - left, center, right, justified</li>
+          <li>text-decoration - underline, line-through, etc</li>
+        </ul>
+
+        <li>Lecture 59/60: </li>
+        <ul>
+          <li><a href="https://fonts.google.com/">using google fonts</a> </li>
+          <li>copy the link href into the < head > of the project</li>
+        </ul>
+
+        <li>Lecture 61: Introduction to the Box Model</li>
+        <img src="https://pressupinc.com/wp-content/uploads/2014/01/box-model.png" alt="">
+        <ul>
+          <li>Padding, margin, border, etc</li>
+          <li>padding - between content and border</li>
+          <li>margin - between border on outside and anything else (use to put space between two elements) </li>
+          <li>Box model example</li>
+          <ol>
+            <li>boxmodel.html</li>
+            <li>boxmodel-style.css</li>
+          </ol>
+          <li>width/height: you can use px or percentages (%), which makes it responsive</li>
+          <li><span style="color: green;">padding</span> - inside the element, between border and content-content </li>
+          <li><span style="color: orange;">margin</span> - ouside the element, between elementss</li>
+          <li>shortcut for margin values - <span style="font-family: courier; font-size: 0.9em">margin: top right bottom left</span> </li>
+        </ul>
+
+
+        <li>Lecture 62/63: Tic Tac Toe Board and Solution</li>
+        <ol>
+          <li><a href="tictactoe-style.css">tictactoe-style.css</a></li>
+          <li><a href="tictactoe.html">tictactoe.html</a></li>
+        </ol>
+        <br>
+
+        <li>Lecture 64-67: Image Gallery Code and Solution</li>
+        <ol>
+          <li><a href="photoGrid.html">photoGrid.html</a> </li>
+          <li><a href="photos.css">photos.css</a> </li>
+        </ol>
+        <ul>
+          <li>Just so you don't get confused, around the 8 minute mark in the next video, Colt goes over the image sizing calculation. He mistakenly says "..each one of these [images] is 10%..", when he should have said "each one of these is 30%, making 90% total, plus 1.66% times 6 for the margins, which equals 99.96%" (nearly 100%). </li>
+          <li>Also, if you use images of varying dimensions then you may encounter some odd behavior in your grid. See <a href="https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6964150#questions/2670526">here</a> for a solution.</li>
+          <li>float - gets rid of the whitespace that the browser give us automatically: <span style="font-family: courier; font-size: 0.9em">float: left;</span> </li>
+        </ul>
+
+        <li>Lecture 68-71: CSS Blog and Solution</li>
+        <ol>
+          <li><a href="blog.html">blog.html</a></li>
+          <li><a href="blog-style.css">blog-style.css</a></li>
+        </ol>
+        <ul>
+          <li>body has a specific width</li>
+          <li>grey border around the body</li>
+          <li>grey border - #bdc3c7</li>
+          <li>date - #3498db</li>
+          <li>h2 - #2c3e50</li>
+          <li>source sans pro font</li>
+          <li>grey stripe is a left border</li>
+          <li>first paragraph is special (nth)</li>
+          <li>date is in all caps and has letter spacing</li>
+          <li>in between elements is a line - hr</li>
+          <li><span class="code">width: 80%; max-width: 700px; </span></li>
+          <li><span class="code">em</span> vs <span class="code">rem</span>: rem is relative to the root, em is relative to the parent</li>
+        </ul>
       </ul>
+    </div>
 
-
-      <li>Lecture 62/63: Tic Tac Toe Board and Solution</li>
-      <ol>
-        <li>tictactoe-style.css</li>
-        <li>tictactoe.html</li>
-      </ol>
-
-      <li>Lecture 64-67: Image Gallery Code and Solution</li>
-      <ol>
-        <li>photoGrid.html</li>
-        <li>photos.css</li>
-      </ol>
-      <ul>
-        <li>Just so you don't get confused, around the 8 minute mark in the next video, Colt goes over the image sizing calculation. He mistakenly says "..each one of these [images] is 10%..", when he should have said "each one of these is 30%, making 90% total, plus 1.66% times 6 for the margins, which equals 99.96%" (nearly 100%). </li>
-        <li>Also, if you use images of varying dimensions then you may encounter some odd behavior in your grid. See <a href="https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6964150#questions/2670526">here</a> for a solution.</li>
-        <li>float - gets rid of the whitespace that the browser give us automatically: <span style="font-family: courier; font-size: 0.9em">float: left;</span> </li>
-      </ul>
-
-      <li>Lecture 68-71: CSS Blog and Solution</li>
-      <ol>
-        <li><a href="blog.html">blog.html</a></li>
-        <li><a href="blog-style.css">blog-style.css</a></li>
-      </ol>
-      <ul>
-        <li>body has a specific width</li>
-        <li>grey border around the body</li>
-        <li>grey border - #bdc3c7</li>
-        <li>date - #3498db</li>
-        <li>h2 - #2c3e50</li>
-        <li>source sans pro font</li>
-        <li>grey stripe is a left border</li>
-        <li>first paragraph is special (nth)</li>
-        <li>date is in all caps and has letter spacing</li>
-        <li>in between elements is a line - hr</li>
-        <li><span style="font-family: courier">width: 80%; max-width: 700px; </span></li>
-        <li><span style="font-family: courier">em</span> vs <span style="font-family: courier">rem</span>: rem is relative to the root, em is relative to the parent</li>
-
-      </ul>
-
-
-    </ul>
   </body>
 </html>
