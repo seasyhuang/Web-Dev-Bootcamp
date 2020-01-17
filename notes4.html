@@ -3,47 +3,140 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Bootstrap Notes</title>
   </head>
   <body>
-    <h1>Bootstrap </h1>
-    <h2>Unit 7</h2>
-    <ul>
-      <li class="lecture">Lecture 72/73: Intro</li>
+    <div class="container">
+      <h1>Bootstrap </h1>
+      <h2>Unit 7</h2>
       <ul>
-        <li><a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3 v3.3.7</a></li>
+        <li class="lecture">Lecture 72/73: Intro</li>
+        <ul>
+          <li><a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3 v3.3.7</a></li>
+        </ul>
+
+        <li class="lecture">Lecture 74: What is bootstrap? </li>
+        <ul>
+          <li>framework </li>
+          <li>one of the most popular: navbars</li>
+          <li><a href="https://expo.getbootstrap.com/">examples of Bootstrap websites</a>
+          </li>
+
+        </ul>
+
+        <li class="lecture">Lecture 74: adding bootstrap to a project </li>
+        <ol>
+          <li><a href="basics.html">basics.html</a> </li>
+          <li><a href="../bootstrap-3.3.7-dist/css/bootstrap.css">bootstrap.css (downloaded)</a></li>
+        </ol>
+        <ul>
+          <li>download files and add to application - saved bootstrap outside of github folder</li>
+          <li><a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">bootstrap CDN</a> - a link to the the minified bootstrap file that's hosted online</li>
+          <li><a href="https://getbootstrap.com/docs/3.3/css/#buttons">button:</a> use the <span class="code">btn</span> class </li>
+          <li>the btn class doesn't need to be used with a button - can be used with a tags, etc</li>
+          <li>can also: <span class="code">active, disable</span></li>
+          <li>you can also override the style (see <span class="code">head</span>)</li>
+
+        </ul>
+
+        <li class="lecture">Lecture 76: forms and inputs</li>
+        <ol>
+          <li><a href="basics.html">basics.html</a> </li>
+          <li><a href="../bootstrap-3.3.7-dist/css/bootstrap.css">bootstrap.css (downloaded)</a></li>
+        </ol>
+        <ul>
+          <li><a href="https://getbootstrap.com/docs/3.3/components/#jumbotron">jumbotrons</a> - thing that stretches across the entire page</li>
+          <li>containers - automatically gives nice spacing: use <span class="code">< div class="container"></span> </li>
+          <li><a href="https://getbootstrap.com/docs/3.3/css/#forms">forms</a> </li>
+          <ul class="inner">
+            <li>form groups - optimal spacing between form spaces <span class="code">.form-group</span> </li>
+            <li>form control - <span class="code">.form-control</span> </li>
+            <li>help block</li>
+          </ul>
+          <li>inline form</li>
+          <ul class="inner">
+            <li>using the one class <span class="code">form class="form-inline"</span> </li>
+            <li>for some reason it doesn't look that hot in the <a href="basics.html">basics.html</a> </li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 77: navbar</li>
+        <ol>
+          <li><a href="navbar.html">navbar.html</a> </li>
+          <li><a href="../bootstrap-3.3.7-dist/css/bootstrap.css">bootstrap.css (downloaded)</a></li>
+        </ol>
+        <ul>
+          <li><a href="https://getbootstrap.com/docs/3.3/components/#navbar">navbars</a> </li>
+          <li>simplest way of making a navbar: start with the <span class="code">nav</span> element, and two classes: <span class="code">navbar navbar-default</span> </li>
+          <ul class="inner">
+            <li>need a div inside the nav with <span class="code">class="navbar-header"</span> </li>
+            <ul class="inner">
+              <li>inside that, need anchor tag with brand (clicking it would take you to homepage) <span class="code">< a class="#" class="navbar-brand">< /a></span> </li>
+            </ul>
+          </ul>
+          <li>next, need a second div/ul element with <span class="code">class="nav navbar-nav"</span> </li>
+          <ul class="inner">
+            <li>for every item in this div/ul --> new li with a tag inside to link to new page </li>
+            <li>it's more conventional to use an ul - works fine with div though</li>
+          </ul>
+          <li>adding something to the right side of the navbar:</li>
+          <ul class="inner">
+            <li>need an element (div or ul) with <span class="code">class="nav navbar-nav navbar-right"</span> </li>
+            <li>if there is no container around the overall navbar, the elements on the right will be right up against the page edge</li>
+            <li>container should be <em>inside</em> the navbar --> content becomes restricted</li>
+            <li>if the container is outside the navbar, whole navbar is restricted</li>
+          </ul>
+          <li>looking at the default navbar</li>
+          <ul class="inner">
+            <li>if you don't add the <a href="https://getbootstrap.com/docs/3.3/getting-started/">bootstrap js</a> file/cdn to your html, the dropdown buttons won't do anything</li>
+            <li>need to include <a href="https://code.jquery.com/">jquery cdn</a> as well</li>
+            <li>included at the bottom of the body</li>
+            <li><em>jquery cdn must come before js because the javascript relies on jquery</em> </li>
+            <li>dropdowns should work now</li>
+            <li>look at <span class="code"> div class="collapse navbar-collapse"</span> - content will collapse when the browser hits mobile size</li>
+            <li>to get the hamburger: see the section starting with <span class="code">button type="button" class="navbar-toggle collapsed" </span> ...</li>
+            <ul class="inner">
+              <li>this needs to be placed in the navbar header <em>before</em> the Koffee a tag</li>
+              <li>button, inside is 3 spans: each span is one of the narrow bars</li>
+              <li>showing and hiding the content depends on the <span class="code">data-target</span> attribute in the button and the <span class="code">id</span> in the collapse section</li>
+              <li>these have to match (<span class="code">#data-target</span> vs <span class="code">id</span> (no #))</li>
+              <li>in <a href="navbar.html">example</a>, i called it <span class="code">datatargetandid</span></li>
+            </ul>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 78/79: bootstrap grid system</li>
+        <ol>
+          <li><a href="grid.html">grid.html</a> </li>
+          <li><a href="grid2.html">grid2.html</a> </li>
+        </ol>
+        <ul>
+          <li>the main reason people use bootstrap</li>
+          <li><a href="https://getbootstrap.com/docs/3.3/css/#grid">grid system</a> </li>
+          <li>any time you use the grid system, needs to be in a <span class="code">container</span> class</li>
+          <li>inside the <span class="code">container</span>, you need a <span class="code">row</span></li>
+          <li>grid is made of 12 units</li>
+          <li>2x <span style="code">col-lg-6</span> = 12</li>
+          <li>sizes:</li>
+          <ul class="inner">
+            <li>there are four sizes: <span class="code">xs, sm, md, lg</span> </li>
+            <ul class="inner">
+              <li>xs - phone</li>
+              <li>sm - tablet</li>
+              <li>md - desktop</li>
+              <li>lg - bigger desktops (>1200px)</li>
+            </ul>
+          </ul>
+          <li><a href="grid2.html">example</a>: <span class="code">class="col-lg-1 col-md-2"</span> when the grid is large size, take up 1 unit; medium size, 2 units</li>
+          <li>we may want to do this: <span class="code">col-lg-3 col-md-3</span>; however, you don't need to put the lg if it's the same as md <span class="code">col-md-3</span> </li>
+          <li>adding another row inside a row splits it into another 12 units</li>
+
+        </ul>
+
+
       </ul>
 
-      <li class="lecture">Lecture 74: What is bootstrap? </li>
-      <ul>
-        <li>framework </li>
-        <li>one of the most popular: navbars</li>
-        <li><a href="https://expo.getbootstrap.com/">examples of Bootstrap websites</a>
-        </li>
-
-      </ul>
-
-      <li class="lecture">Lecture 74: adding bootstrap to a project </li>
-      <ol>
-        <li><a href="basics.html">basics.html</a> </li>
-        <li><a href="../bootstrap-3.3.7-dist/css/bootstrap.css">bootstrap.css (downloaded)</a></li>
-      </ol>
-      <ul>
-        <li>download files and add to application - saved bootstrap outside of github folder</li>
-        <li><a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">bootstrap CDN</a> - a link to the the minified bootstrap file that's hosted online</li>
-        <li><a href="https://getbootstrap.com/docs/3.3/css/#buttons">button:</a> use the <span class="code">btn</span> class </li>
-        <li>the btn class doesn't need to be used with a button - can be used with a tags, etc</li>
-        <li>can also: <span class="code">active, disable</span></li>
-        <li>you can also override the style (see <span class="code">head</span>)</li>
-
-      </ul>
-
-      <li class="lecture">Lecture 76: forms and inputs</li>
-      <ul>
-        <li></li>
-      </ul>
-
-
-    </ul>
+    </div>
   </body>
 </html>

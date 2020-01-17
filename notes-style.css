@@ -12,8 +12,12 @@ ul ul {
   padding-bottom: 15px;
 }
 
+.inner {
+  padding-bottom: 0;
+}
+
 .code {
   font-family: courier;
-  font-size: 0.9em;
-  color: #7c7c7c;
+  font-size: 1em;
+  color: green;
 }
