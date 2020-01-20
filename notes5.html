@@ -96,14 +96,74 @@
         <li class="lecture">Lecture 95: new features in bootstrap 4</li>
         <ol>
           <li><a href="utilities.html">utilities.html</a> </li>
-          <li><a href="https://getbootstrap.com/docs/4.4/utilities/">utilities</a></li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/">bootstrap utilities</a></li>
         </ol>
         <ul>
-          
+          <li>borders in spans: <code>span class="border"</code> you can now add and subtract borders </li>
+          <li>to selectively subtract a border: <code>border-top-0</code> </li>
+          <li>no way to easily subtract border thickness, but you <em>can</em> change <a href="https://getbootstrap.com/docs/4.4/utilities/borders/#border-radius">border radius</a> and <a href="https://getbootstrap.com/docs/4.4/utilities/borders/#border-color">color</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/spacing/">spacing:</a> (not responsive)</li>
+          <ul class="inner">
+            <li>new syntax: <code>m</code> for margin, <code>p</code> for padding</li>
+            <li>specify by adding either <code>t</code>, <code>b</code>, <code>l</code>, <code>r</code> for top bottom left right</li>
+            <li><code>x</code> does padding left and right, <code>y</code> does passing top and bottom </li>
+            <li>examples: <code>p-0</code>, <code>pt-5</code> </li>
+            <li>5 levels of padding, based of rem</li>
+            <li>same applies to margins <code>m</code> </li>
+          </ul>
         </ul>
 
+        <li class="lecture">Lecture 96: responsive breakpoints</li>
+        <ol>
+          <li><a href="breakpoints.html">breakpoints.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/layout/overview/#responsive-breakpoints">bootstrap breakpoints</a></li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/spacing">bootstrap spacing</a></li>
+        </ol>
+        <ul>
+          <li>responsiveness</li>
+          <li>new screensize: extra small size for portrait mode phones (small size is landscape mode on phones)</li>
+          <li>to incorporate responsiveness, use this format: <code>{property}{sides}-{breakpoint}-{size}</code> </li>
+          <li>example: <code>button class="btn p-sm-5 p-md-0 p-lg-5 p-xl-0"</code> </li>
+          <li>this <code>p-sm-5</code> would affect everything small and <em>above</em> </li>
+          <li>note that xs is the default - set it with <code>p-0</code> for example</li>
+          <li>in the <a href="breakpoints.html">example</a>, the margins get bigger as the page gets bigger </li>
+        </ul>
 
+        <li class="lecture">Lecture 97: navbars</li>
+        <ol>
+          <li><a href="navbar4.html">navbar4.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/components/navbar/">bootstrap navbars</a></li>
+        </ol>
+        <ul>
+          <li>now you can change at what point the navbar collapses (technically, when it expands)</li>
+          <li>entirely rewritten in flexbox</li>
+          <li>new required class: <code>.navbar-expand{-sm|-md|-lg|-xl}</code> </li>
+          <li>no more <code>navbar-default</code>, now it's <code>dark</code> and <code>light</code> </li>
+          <li>you also have to set a background </li>
+          <li>no more autromatic <code>margin-bottom</code> </li>
+          <li>for dark navbars: <code>nav class="navbar navbar-expand-xl navbar-dark bg-info"</code> the <code>navbar-dark</code> refers to light text, and <code>bg-info</code> specifies the color of the background</li>
+        </ul>
 
+        <li class="lecture">Lecture 98: new display utility</li>
+        <ol>
+          <li><a href="displayutility.html">displayutility.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/display/">bootstrap display utility</a></li>
+        </ol>
+        <ul>
+          <li>there used to be <code>hidden</code> and <code>visible</code> classes that changed what was visible on what page size (responsive)</li>
+          <li>those were removed: now there is the <code>d</code> utility (display)</li>
+          <li>example: <code>.d-{value}</code> for xs size</li>
+          <li>hide me on xl: <code>h1 class="d-xl-none"</code> </li>
+          <li>always hidden except large: <code>h1 class="d-none d-lg-block d-xl-none"</code></li>
+          <ul class="inner">
+            <li>from xs (default) up, nothing. when we get to large, show. when xl, hide it again</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">personal challenge</li>
+        <ul>
+          <li>rewrite this page in Bootstrap 4</li>
+        </ul>
 
       </ul>
     </div>
