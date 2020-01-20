@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>Bootstrap 4 Notes</title>
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <iframe src="notes-navbar.html" frameborder="0" width="100%" height="70px"></iframe>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Bootstrap 4 Notes</h1>
+        <h2>Unit 8</h2>
+      </div>
+      <ul>
+        <li class="lecture">Lecture 88: Intro and history of bootstrap 4</li>
+        <ul>
+          <li><a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">Bootstrap 4</a></li>
+          <li>flexbox</li>
+          <li>terminology: alpha --> beta --> stable</li>
+        </ul>
+
+        <li class="lecture">Lecture 89: bootstrap 4 documentation</li>
+        <ul>
+          <li>different from Bootstrap 3.x</li>
+          <li><a href="https://getbootstrap.com/docs/4.4/components/input-group/">example: input groups</a>  has changed</li>
+        </ul>
+
+        <li class="lecture">Lecture 90: changes from bootstrap 3.x to 4.x</li>
+        <ul>
+          <li>we usually have the documentation open anyway while we're coding, so this is not a line by line comparison</li>
+          <li><a href="https://getbootstrap.com/docs/4.4/migration/">changes</a> are listed here</li>
+          <li>flexbox is enabled by default</li>
+          <ul class="inner">
+            <li>bootstrap is now built around flexbox</li>
+            <li>makes things cleaner</li>
+          </ul>
+          <li>rems are now the default (instead of px)</li>
+          <li>global font size is 16px instead of 14px</li>
+          <li>there are now 5 tiers in grid system </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/borders/">new utility classes</a> (didn't exist in bs 3)</li>
+          <li>new component called cards</li>
+          <li>no more glyphicons - if you want to use icons, use external (like fontawesome)</li>
+          <li>everything kind of renamed - ex. no more <code class="highlighter-rouge">btn-small</code> class, no more <code class="highlighter-rouge">btn-default</code> class</li>
+        </ul>
+
+        <li class="lecture">Lecture 92: getting started with bs4</li>
+        <ol>
+          <li><a href="gettingstarted.html">gettingstarted.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">Getting started (Bootstrap)</a></li>
+        </ol>
+        <ul>
+          <li>need to include the <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/#css">css</a> in the head</li>
+          <li>and the <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/#js">three lines of js</a> in the body (at the bottom) - need to be in this exact order</li>
+          <li>in general, it's easiest to start by copying the <strong><a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/#starter-template">starter template</a> </strong> </li>
+          <li>included card component and dropdown menu to check if the js is added properly</li>
+        </ul>
+
+        <li class="lecture">Lecture 93: colors and backgrounds</li>
+        <ol>
+          <li><a href="colors4.html">colors4.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/colors/">bootstrap colors</a></li>
+        </ol>
+        <ul>
+          <li>both 3.x and 4.x use contextual colors and backgrounds</li>
+          <li>bs 4 is brighter, has new backgrounds</li>
+        </ul>
+
+        <li class="lecture">Lecture 94: typography</li>
+        <ol>
+          <li><a href="typography.html">typography.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/typography/">bootstrap colors</a></li>
+        </ol>
+        <ul>
+          <li>no more page header class</li>
+          <li>new display classes - a larger, slightly more opinionated heading style</li>
+          <li><code class="highlighter-rouge">blockquotes</code> are now div classes</li>
+          <li>in the p class: <code>p class=mb-0</code> is optional, sets the margin bottom to 0 </li>
+          <li>we now have a footer class: <code class="highlighter-rouge">footer class="blockquote-footer"</code> </li>
+          <ul class="inner">
+            <li>citation inside the footer class class: <code class="highlighter-rouge">cite title="this will be italicized"</code> </li>
+          </ul>
+          <li>right align: <code class="highlighter-rouge">text-right</code> </li>
+          <li>big change: font units</li>
+          <ul class="inner">
+            <li>from <code>px</code> to <code>rems</code> - root ems</li>
+            <li>if the root font size changes, everything with <code>rem</code> will become bigger </li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 95: new features in bootstrap 4</li>
+        <ol>
+          <li><a href="utilities.html">utilities.html</a> </li>
+          <li><a href="https://getbootstrap.com/docs/4.4/utilities/">utilities</a></li>
+        </ol>
+        <ul>
+          
+        </ul>
+
+
+
+
+      </ul>
+    </div>
+
+  </body>
+</html>
