@@ -18,10 +18,11 @@
     <iframe src="notes-navbar4.html" frameborder="0" width="100%" height="70px"></iframe>
 
     <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-1 text-info">Bootstrap Flexbox Notes</h1>
-        <h1 class="display-4">Unit 9</h1>
+      <div class="jumbotron pl-5">
+        <h1 class="display-2 text-info">Bootstrap Flexbox </h1>
+        <h2 class="display-5">Unit 9</h1>
       </div>
+
       <ul>
         <li class="lecture">Lecture 99: Flexbox and layout</li>
         <ol>
@@ -31,7 +32,7 @@
           <li><a href="https://getbootstrap.com/docs/4.4/utilities/flex/">Flexbox</a></li>
           <li>exists outside of the BS world: a model for positioning content inside of a box</li>
           <li>but with BS, you can do the same thing but more easily</li>
-          <li>first, you need to make whatever div container you're working with into a flexbox: <code>div class="border border-dark d-flex"</code> </li>
+          <li>first, you need to make whatever div container you're working with into a flexbox: <code>div class="d-flex"</code> </li>
           <li>the start of the flexbox/the main axis is from left to right</li>
           <li>the cross axis is top - bottom</li>
           <li>if we want to easily move all the content to the right side of the flexbox, we can use <code>justify-content-end</code> </li>
@@ -117,6 +118,66 @@
         <ol>
           <li><a href="gridflexbox.html">gridflexbox.html</a> </li>
         </ol>
+        <ul>
+          <li>easy way to add spacing between elements using both the grid (<code>col-</code>) and flexbox (<code>justify</code>, <code>align</code>, etc) </li>
+          <li>you can have 3 divs with <code>col-3</code> each, then play around with <code>justify-</code> or <code>align-</code> to change the leftover 3 units of spacing </li>
+          <li>you can also give individual divs <code>align-self-start</code> that can override the overall <code>align</code> (don't think this works for justify) </li>
+        </ul>
+
+        <li class="lecture">Lecture 106: museum of candy</li>
+        <ol>
+          <li><a href="museum.html">museum.html</a> </li>
+          <li><a href="museum-css.css">museum-css.css</a> </li>
+        </ol>
+        <ul>
+          <li> fictional "instagram" museum - codealong</li>
+          <li>tbh very aesthetic</li>
+          <li>grid is not very challenging, mostly 50%</li>
+          <li>icon disappears at a breakpoint - using the <code>display</code> function </li>
+          <li>navbar expands and medium: <code>navbar-expand-md</code> </li>
+          <li>setting up the collapse, etc: in the button, <code>data-target="#navLinks"</code>; in the div of class <code>class="collapse navbar-collapse"</code>, set matching id <code>id="navLinks"</code> </li>
+          <li>in the button, to make the website friendly to screenreaders, add <code>aria-label="Toggle Navigation"</code> attribute </li>
+          <li>navbar fixed to the top: add to class <code>fixed-top</code> </li>
+          <li>start with a section of class: <code>class="container-fluid"</code> </li>
+          <ul class="inner">
+            <li>difference: <code>.container</code> has one fixed width for each screen size in bootstrap (xs,sm,md,lg)</li>
+            <li>while <code>.container-fluid</code> expands to fill the available width</li>
+          </ul>
+          <li>easy fix for images: give <code>img class="img-fluid"</code> - responsive </li>
+          <li>to make the main header only appear at large and above breakpoint: give (new) div class <code>d-none d-lg-block</code> </li>
+          <ul class="inner">
+            <li>default display is none</li>
+            <li>at lg breakpoint, appear as block</li>
+          </ul>
+          <li>media queries</li>
+          <ul class="inner">
+            <li>change the css depending on the screen size</li>
+            <li>example: <code>@media (max-width: 1200px) { ...new css... }</code> </li>
+          </ul>
+          <li>smart spacing: use <code>justify-content-center</code> </li>
+          <li>you can also assign the <strong>order</strong> of divs: </li>
+          <ul class="inner">
+            <li>using the class <code>order-#</code> </li>
+            <li>in the example, we change the order at different breakpoints</li>
+          </ul>
+          <li>navbar scolling change background:</li>
+          <ul class="inner">
+            <li>add javascript to bottom of body (under javascript, jquery):</li>
+            <li><code>$(function () {
+                $(document).scroll(function () {
+                    var $nav = $("#mainNavbar");
+                    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+                });
+            });</code> </li>
+            <li>to change the time for transition, in the css, add <code>  transition: background 1s;</code> </li>
+          </ul>
+        </ul>
+
+
+        <li>Todo:</li>
+        <ul>
+          <li>fix github site to use col and flexbox together (Lecture 105)</li>
+        </ul>
 
       </ul>
     </div>
