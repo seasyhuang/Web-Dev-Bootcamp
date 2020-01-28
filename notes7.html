@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>Bootstrap Flexbox Notes</title>
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <iframe src="notes-navbar4.html" frameborder="0" width="100%" height="70px"></iframe>
+
+    <div class="container">
+      <div class="jumbotron pl-5">
+        <h1 class="display-2 text-info">Javascript </h1>
+        <h2 class="display-5">Section 10 + 11</h1>
+      </div>
+
+      <ul>
+        <li class="lecture">Lecture 112: Intro to JS</li>
+        <ul>
+          <li>this unit will be exercise example heavy</li>
+        </ul>
+
+        <li class="lecture">Lecture 113: chrome developer tool</li>
+        <ul>
+          <li>console</li>
+          <li>pop-up: <code>alert("hello");</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 114: primitives</li>
+        <ul>
+          <li>5 primitive datatypes: numbers, string, booleans, null, undefined</li>
+          <li>numbers: whole, decimal, negative all treated the same </li>
+          <ul class="inner">
+            <li>when you type a number in the console, it just returns it to you</li>
+            <li>modulo <code>%</code> gives you the remainder: 10%3 gives you 1 </li>
+          </ul>
+          <li>string: in quotations (can be either " or ') </li>
+          <ul class="inner">
+            <li>concatenation: <code>+</code> </li>
+            <li>escape characters: <code>\</code> </li>
+            <li>length: <code>"string".length</code> </li>
+            <li>nth character: <code>"string"[n+1]</code> </li>
+          </ul>
+          <li>boolean: <code>true</code> and <code>false</code> </li>
+          <li>null: value (only one) </li>
+          <li>undefined: value (only one) </li>
+        </ul>
+
+        <li class="lecture">Lecture 115: primitives exercises</li>
+        <li class="lecture">Lecture 116: variables</li>
+        <ul>
+          <li>a container with a name</li>
+          <li>syntax: <code>var name = whatever information;</code> </li>
+          <li>variable types can be changed (dynamic)</li>
+          <li>convention is to name with camelCase</li>
+        </ul>
+
+        <li class="lecture">Lecture 117: null and undefined</li>
+        <ul>
+          <li>undefined - when you declare a var but don't set to anything (has no value yet): <code>var age;</code> </li>
+          <li>null - <em>explicit</em> nothingness</li>
+        </ul>
+
+        <li class="lecture">Lecture 118: built in methods</li>
+        <ul>
+          <li>three: <code>alert()</code>, <code>prompt</code>, <code>console.log</code>  </li>
+          <li>also useful to clear console: <code>clear()</code> </li>
+          <li>alert - gives a popup <code>alert("whatever you want it to say")</code></li>
+          <li>console - <code>console.log("whatever you want to say in the console")</code>  </li>
+          <li>get input from user - <code>prompt("prompt here")</code> </li>
+          <ul class="inner">
+            <li>store the output of prompt (user input) as a var</li>
+            <li><code>var etc = prompt("hhhh")</code> </li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 119: javascript in a separate file</li>
+        <ol>
+          <li><a href="jsexample.html">jsexample.html</a> </li>
+          <li><a href="script.js">script.js</a> </li>
+        </ol>
+        <ul>
+          <li>connect using script text</li>
+          <li>shortcut in atom: <code>src</code> </li>
+          <li>include in the head: <code>< script src="script.js" charset="utf-8">< /script ></code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 120-121: JS stalker exercise</li>
+        <ol>
+          <li><a href="jsstalker.html">jsstalker.html</a> </li>
+          <li><a href="stalker.js">stalker.js</a> </li>
+        </ol>
+        <br>
+
+        <li class="lecture">Lecture 122-123: age calculator </li>
+        <ol>
+          <li><a href="agecalculator.html">agecalculator.html</a> </li>
+          <li><a href="agecalculator.js">agecalculator.js</a> </li>
+        </ol>
+        <ul>
+          <li>notice that script location (in the html) matters</li>
+        </ul>
+      </ul>
+
+      <h1 class="my-3 text-info">JS Basics: Control Flow</h1>
+      <ul>
+        <li class="lecture">Lecture 124: intro </li>
+        <ul>
+          <li>control flow: if else statements</li>
+          <li>conditional statements and loops (for and while)</li>
+          <li>translating between for loops and while loops</li>
+        </ul>
+
+        <li class="lecture">Lecture 125: boolean logic </li>
+        <ul>
+          <li>true, false, and beyond</li>
+          <li>boolean logic - writing statements that evaluate to true or false</li>
+          <li>comparison operators: <code>> >= < <= == != === !==</code> </li>
+          <li><code>===</code> does not perform type coercion (takes both vars and tries to turn them into same type), while <code>==</code> does </li>
+          <ul class="inner">
+            <li><code>5 == 'x'</code> is true </li>
+          </ul>
+          <li>interesting cases of <code>==</code> </li>
+          <ul class="inner">
+            <li><code>true == "1"</code> is true</li>
+            <li><code>false == 0</code> is true</li>
+            <li><code>NaN == NaN</code> is false</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 126-7: logical operators </li>
+        <ul>
+          <li>quick note to self: <code>""</code> is an empty string </li>
+        </ul>
+
+
+      </ul>
+
+
+
+
+
+
+
+    </div>
+
+  </body>
+</html>
