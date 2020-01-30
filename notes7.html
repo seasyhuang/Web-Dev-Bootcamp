@@ -174,12 +174,90 @@
 
       <h1 class="my-3 text-info">JS Functions</h1>
       <ul>
-        <li class="lecture">Lecture 143: introduction to functions</li>
+        <li class="lecture">Lecture 143-149: introduction to functions</li>
+        <ol>
+          <li><a href="function.html">function.html</a> </li>
+          <li><a href="function.js">function.js</a> </li>
+        </ol>
         <ul>
           <li>two steps: declare then call - a variable that stores lines of code</li>
-          <li>delaration: <code>function fName(){ do something }</code> </li>
+          <li>declaring the function: <code>function fName(){ do something }</code> </li>
           <li>calling the function: <code>fName();</code> </li>
+          <li>helps make the code less DRY</li>
+          <li>functions with arguments: <code>function fName(argument1, argument2){ do something with argument2 } </code></li>
+          <li>if you don't give one argument in a function, it would just be left as <code>undefined</code> - this doesn't break the code like in other languages </li>
+          <li>the <code>return</code> keyword: output of the function </li>
+          <li>in the chrome developer console, there will be a left arrow <code><</code> on the side of the returned value</li>
+          <li>useful functions from example:</li>
+          <ul class="inner">
+            <li><code>str.charAt(0)</code> returns first character </li>
+            <li><code>str.slice(1)</code> returns everything <strong>including</strong> and after str at index (<code>"hello".slice(1) --> ello</code>)</li>
+          </ul>
+          <li>functions problem set: see <a href="function.html">function.html</a> </li>
         </ul>
+
+      <li class="lecture">Lecture 150-151: function scopes</li>
+      <ol>
+        <li><a href="function.html">function.html</a> </li>
+        <li><a href="functionscope.js">functionscope.js</a> </li>
+      </ol>
+      <ul>
+        <li>notes are mostly commented in the js file</li>
+      </ul>
+
+      <li class="lecture">Lecture 152: higher order function</li>
+      <ul>
+        <li>js function: <code>setInterval(function 1, time)</code> </li>
+        <li>when you pass function 1, don't add () - we aren't calling the function, we're passing as input</li>
+        <li>exception: <strong>anonymous function</strong> <code>setInterval( function(){ ... code ...}, time)</code> </li>
+      </ul>
+    </ul>
+
+    <h1 class="my-3 text-info">JS Arrays</h1>
+    <ul>
+      <li class="lecture">Lecture 154: introduction</li>
+      <ul>
+        <li>data scructure </li>
+        <li>define: <code>var friends = ["fds", "rfdjkwl", "dfjkla"];</code> </li>
+        <li>adding new info to array: can just say <code>friends[3] = "new friend"</code>, code won't break if you go larger than array size </li>
+        <li>if you add something to an array (size 3) at index 10, everything between would be undefined</li>
+        <li>not type specific</li>
+        <li>to get length: <code>array.length</code> </li>
+      </ul>
+
+      <li class="lecture">Lecture 155/6: array methods</li>
+      <ul>
+        <li>methods: <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code> </li>
+        <li>adding to <strong>end</strong> of array: <code>array.push(newThing)</code>, returns the length of array </li>
+        <li>removing from <strong>end</strong> of array: <code>array.pop()</code>, returns the removed item</li>
+        <li>adding to <em>start</em> of array: <code>array.unshift(newThing)</code>, returns the length of array</li>
+        <li>removing from <em>start</em> of array: <code>array.shift()</code>, returns the removed item</li>
+        <li>finding something in your array: <code>array.indexOf(what you're looking for)</code>, returns index of first instance <strong>or</strong> <code>-1</code> if not there </li>
+        <li>copy different portions of array: <code>array.slice(1,3)</code> - includes 1, not 3 </li>
+        <ul class="inner">
+          <li><code>nums = [1, 2, 3, 4]</code></li>
+          <li><code>nums.slice(1,3) --> [2, 3]</code></li>
+          <li><code>nums.slice(1,2) --> [2]</code></li>
+          <li><code>nums.slice(1) --> [2, 3, 4]</code></li>
+        </ul>
+      </ul>
+
+      <li class="lecture">Lecture 157/8: todo list code along</li>
+      <ol>
+        <li><a href="jscodealong.html">jscodealong.html</a> </li>
+        <li><a href="jscodealong.js">jscodealong.js</a> </li>
+      </ol>
+      <ul>
+        <li>problem with chrome: Chrome browser behaves a little strangely when using alert, prompt, or confirm functions. It doesn't display the HTML on the page until after the popup has been closed. This is problematic since our HTML contains instructions for the user to be able to use the app we're building.</li>
+        <li>solution: <code>window.setTimeout(function() {  // put all of your JS code from the lecture here }, 500);</code> </li>
+      </ul>
+
+      <li class="lecture">Lecture 159: array iteration</li>
+      <ul>
+        <li>for loops, forEach loops</li>
+        <li>easier built-in way of iterating over an array: <code>arr.forEach(someFunction)</code> </li>
+        <li>example using anonymous function <code>colors.forEach(funtion(color) { console.log(color) });</code> </li>
+
       </ul>
 
 
@@ -187,6 +265,8 @@
 
 
 
+
+    </ul>
 
     </div>
 
