@@ -20,7 +20,7 @@
     <div class="container">
       <div class="jumbotron pl-5">
         <h1 class="display-2 text-info">Javascript </h1>
-        <h2 class="display-5">Section 10 - 12</h1>
+        <h2 class="display-5">Section 10 - 14</h1>
       </div>
 
       <ul>
@@ -283,16 +283,64 @@
         <li>how do you make a function that takes a function as argument</li>
       </ul>
 
+      <h1 class="my-3 text-info">JS Objects</h1>
+      <ul>
+        <li class="lecture">Lecture 166: Introduction</li>
+        <ul>
+          <li>declaraion: <code>var object = { key: value; key: value; ... };</code> </li>
+          <li>can also do <code>var object = {};</code>, <code>var object = new Object();</code> and add elements after </li>
+          <li>unlike arrays, no indices - stored in no order</li>
+          <li>accessing: <code>object["key"]</code> or <code>object.key</code> </li>
+          <li>can't use dot notation with key that starts with a number or has a space</li>
+          <li>you can't use variables with dot notation either</li>
+          <li>like a dictionary</li>
+        </ul>
 
+        <li class="lecture">Lecture 167: objects vs arrays</li>
+        <ul>
+          <li>array is a special kind of object where the keys are all numbers </li>
+          <li>to add a new kv pair to an object, just arbitrarily add (don't need to know index)</li>
+        </ul>
 
+        <li class="lecture">Lecture 168: nested objects and arrays</li>
+        <ul>
+          <li>an array of posts, where each post is an object</li>
+          <li>example: <code>var posts = [ { title: "1", author: "me", comments: ["fjdksla", "fdsa"] }, { title: "2", author: "you" }, comments: ["473892", "go to hell"] ]</code> </li>
+          <li>saying <code>posts[1].comments[1]</code> would give "go to hell"</li>
+        </ul>
 
+        <li class="lecture">Lecture 169: exercises</li>
+        <ul>
+          <li>valid notation: <code>object._name</code> </li>
+          <li>someobject.friends[0].name</li>
+        </ul>
 
+        <li class="lecture">Lecture 170: movie database exercise</li>
+        <ol>
+          <li><a href="movie.html">movie.html</a> </li>
+          <li><a href="movie.js">movie.js</a> </li>
+        </ol>
+        <br>
 
+        <li class="lecture">Lecture 171: adding methods to objects</li>
+        <ul>
+          <li>we can put whatever we want in an object</li>
+          <li>we can add functions to objects - then they become "methods"</li>
+          <li>declare the same way, but as a key:value pair in/property of an object</li>
+          <li>example: <code>console.log()</code> </li>
+          <li>good for organization - different objects can have the same function name (avoid "namespace collision")</li>
+        </ul>
 
-
-
+        <li class="lecture">Lecture 172: this</li>
+        <ol>
+          <li><a href="movie.html">movie.html</a> - got lazy here</li>
+          <li><a href="methods.js">methods.js</a> </li>
+        </ol>
+        <ul>
+          <li>underscore.js - a library </li>
+        </ul>
+      </ul>
     </ul>
-
     </div>
 
   </body>
