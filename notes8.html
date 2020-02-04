@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
+    <style type="text/css">
+      .big {
+        font-size: 100px;
+      }
+    </style>
+
     <title>DOM Manipulation Notes</title>
   </head>
   <body>
@@ -22,6 +28,112 @@
         <h1 class="display-2 text-info">DOM Manipulation</h1>
         <h2 class="display-5">Section 15</h1>
       </div>
+
+      <ul>
+        <li class="lecture">Lecture 174: Intro to DOM</li>
+        <ul>
+          <li>interactivity</li>
+        </ul>
+
+        <li class="lecture">Lecture 174: definining DOM</li>
+        <ul>
+          <li>document object model</li>
+          <li>the interface between your js and html/css</li>
+          <li>everything is stored inside the <em>document</em> object</li>
+          <li>to see it in the console as an object: <code>console.dir(document)</code> </li>
+          <li>the goal is not to memorize everything in the document object - usually work with 10% at most</li>
+        </ul>
+
+        <li class="lecture">Lecture 176: select and manipulate</li>
+        <ul>
+          <li>select the element</li>
+          <li>to select: <code>document.querySelector("h1")</code> returns an object that represents the h1</li>
+          <li>then manipulate the element</li>
+          <li>to manipulate: <code>h1.style.color = "pink";</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 177/8: important selector methods</li>
+        <ul>
+          <li>select IDs: <code>getElementById()</code> - returns an object (looks like html in the console)</li>
+          <li>select class: <code>getElementsByClassName()</code> - note that it's element<strong>s</strong>, returns a list of elements (not array) </li>
+          <li>select by tag name: <code>getElementsByTagName()</code> - selects li, ul, div, head, body, etc. and returns as a list (even if there is only one element in the list) </li>
+          <li>note that <code>querySelectorAll</code> gives all matches of the inputted css selector,  but <code>querySelector</code> gives the first instance </li>
+        </ul>
+
+        <li class="lecture">Lecture 179: selector exercise</li>
+        <ol>
+          <li>selector-exercise.html</li>
+        </ol>
+        <ul>
+          <li>4 ways of selecting first paragraph</li>
+          <li><code>document.querySelector("p") </code> </li>
+          <li><code>document.getElementsByClassName("special")[0] </code> </li>
+          <li><code>document.querySelector("#first") </code> </li>
+          <li><code>document.querySelector(".special") </code> </li>
+          <li><code>document.getElementsByTagName("p")[0] </code> </li>
+          <li>probably easiest is just to use <code>querySelector("#first")</code> or <code>getElementById("first")</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 180/1: manipulating style</li>
+        <ul>
+          <li>changing element style:</li>
+          <ul class="inner">
+            <li>huge object</li>
+            <li>example (after selecting, set var to h1): <code>h1.style.border = "pink"</code> </li>
+            <li>note that right side has to be a string </li>
+          </ul>
+          <li>useful way of applying a lot of changes at once:</li>
+          <ul class="inner">
+            <li>first define a class in your css</li>
+            <li>then, you can apply to a variable (ex. thing) you've selected by using:</li>
+            <ul class="inner">
+              <li>to add: <code>thing.classList.add("new-css-class")</code></li>
+              <li>to remove: <code>thing.classList.remove("new-css-class")</code></li>
+              <li>to <strong>switch</strong> on or off: <code>thing.classList.toggle("new-css-class")</code></li>
+            </ul>
+            <li id="tbd">try it out on this line <code>var tbd = document.getElementById("tbd"); tbd.classList.toggle("big");</code> </li>
+            <li>would be useful for todo list, for example</li>
+          </ul>
+
+          <li class="lecture">Lecture 182: manipulating text and content</li>
+          <ul>
+            <li>text content - get all the text in an element of a variable using <code>myVar.textContent</code> </li>
+            <li>set it: <code>myVar.textContent = "blah";</code> </li>
+            <li id="textex">try it out on this line <code>var t = document.getElementById("textex"); t.textContent = "blah";</code> - this completely overwrites it </li>
+            <li>to get the html content plus text: <code>myVar.innerHTML</code> </li>
+            <li>try: <code>var t = document.getElementById("textex").innerHTML;</code> - gets you text <strong>and</strong> html in the variable <code>t</code> </li>
+            <li class="text2">another difference between textContent and innerHTML - if i wanted to add html elements, can't use textContent - it will treat it as normal text, won't render the html </li>
+            <ul class="inner">
+              <li>try with textContent (need to remove spaces around h1): <code>document.getElementsByClassName("text2")[0].textContent = "< h1>hi< /h1>"</code> </li>
+              <li>try with innerHTML (need to remove spaces around h1): <code>document.getElementsByClassName("text2")[0].innerHTML = "< h1>hi< /h1>"</code> </li>
+            </ul>
+          </ul>
+
+          <li class="lecture">Lecture 183: manipulating attributes</li>
+          <ul>
+            <li>ex: getting links <code>var link = document.querySelector("a"); link.getAttribute("href");</code> </li>
+            <li><a href="https://www.udemy.com/">link to udemy</a> </li>
+            <li>ex: changing links <code>var link = document.querySelector("a"); link.setAttribute("href", "http://www.google.com");</code> </li>
+            <li>ex: changing image <code>var link = document.querySelector("img"); link.setAttribute("src", "corgi.png);</code> </li>
+          </ul>
+
+          <li class="lecture">Lecture 184/5: playing with google codealong</li>
+          <ul>
+            <li>In the following lecture, Playing With Google Code Along, you'll be changing the logo on the google website using the <code>src</code> attribute. However, this method no longer works. Instead, use the <code>srcset</code> attribute to change the logo image.</li>
+            <li>have to use for loops, can't use for each</li>
+            <li>you can use a loop to change multiple things:</li>
+            <ul class="inner">
+              <li>get all the links on page: <code>links = document.querySelectorAll("a")</code> </li>
+              <li>print all textContent of the links: <code>for (var i = 0; i < links.length; i++) {  console.log(links[i].textContent);    }</code>  </li>
+              <li>get all link destinations of links: <code>for (var i = 0; i < links.length; i++) {  links[i].getAttribute("href");    }</code>  </li>
+            </ul>
+          </ul>
+
+
+        </ul>
+
+
+      </ul>
 
       <ul>
       </ul>
