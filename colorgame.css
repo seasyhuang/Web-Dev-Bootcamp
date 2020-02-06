@@ -1,0 +1,27 @@
+body {
+  background-color: #232323;
+}
+
+.square {
+  width: 30%;
+  background: white;
+  padding-bottom: 30%;
+  /* if no float left, everything would be in one huge column */
+  float: left;
+  margin: 1.66%;
+}
+
+#container {
+  max-width: 600px;
+  /* centers the container */
+  margin: 0 auto;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+span {
+  color: white;
+}

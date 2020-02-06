@@ -14,6 +14,10 @@
       .big {
         font-size: 100px;
       }
+      .purple-bg {
+        background: purple;
+      }
+
     </style>
 
     <title>DOM Manipulation Notes</title>
@@ -26,7 +30,7 @@
     <div class="container">
       <div class="jumbotron pl-5">
         <h1 class="display-2 text-info">DOM Manipulation</h1>
-        <h2 class="display-5">Section 15</h1>
+        <h2 class="display-5">Section 15-17</h1>
       </div>
 
       <ul>
@@ -129,7 +133,60 @@
             </ul>
           </ul>
 
+          <li class="lecture">Lecture 186/7: dom events</li>
+          <ul>
+            <li>making things interactive, example of events: clicking, hovering, dragging/dropping, pressing the enter key,</li>
+            <li>attach event to an <strong>element</strong> and add an <strong>event listener</strong> </li>
+            <li>we use: <code>element.addEventListener(type of event, what you want to happen - function)</code> </li>
+            <li>function will fun when the button is clicked</li>
+            <button class="btn btn-success" id="clickme">change text</button>
+            <ul class="inner">
+              <li id="changetext">this text will change - see the code at <code>eventlistener.js</code> </li>
+            </ul>
+            <li>you can have more than one listener on any element</li>
+            <li>if you want to refer to <code>element</code> in <code>element.addEventListener(...)</code>, you can use the <code>this</code> keyword inside the event listener </li>
+            <li>you don't always need to use an anonymous function - when you need to reuse the function</li>
+          </ul>
 
+          <li class="lecture">Lecture 188: color toggle exercise</li>
+          <ol>
+            <li><a href="eventlistener.js">eventlistener.js</a></li>
+          </ol>
+          <ul>
+            <button type="button" name="button" class="btn btn-dark change">change bg color</button>
+          </ul>
+
+          <li class="lecture">Lecture 189-191: scorekeeper project</li>
+          <ol>
+            <li><a href="score.html">score.html</a></li>
+            <li><a href="score.js">score.js</a></li>
+          </ol>
+          <ul>
+            <li>any change in input - <code>change</code> is a better eventlistener than <code>click</code> </li>
+          </ul>
+
+          <li class="lecture">Lecture 192: other types of events</li>
+          <ul>
+            <li>list of events: <a href="https://developer.mozilla.org/en-US/docs/Web/Events">mdn event ref</a> </li>
+            <li>start hovering (initial hover, not constantly firing): <code>"mouseover"</code> </li>
+            <li>opposite, when we stop hovering: <code>"mouseout"</code> </li>
+            <li>when using forloops, instead of doing <code>lis[i].addEventListener</code> inside the anonymous function, use <code>this.addEventListener</code> </li>
+          </ul>
+
+          <li class="lecture">Lecture 194: counting events exercise</li>
+          <ul>
+            <li>my solution: <code>var event = document.querySelectorAll("tr td:first-child code");</code> </li>
+            <li>returns nodelist of size 385</li>
+          </ul>
+        </ul>
+
+        <h1 class="my-3 text-info">Section 17: Color Guessing Game Project</h1>
+        <ol>
+          <li><a href="colorgame.html">colorgame.html</a> </li>
+          <li><a href="colorgame.css">colorgame.css</a> </li>
+        </ol>
+        <ul>
+          <li class="lecture">stopped at pt 5</li>
         </ul>
 
 
@@ -140,5 +197,6 @@
 
     </div>
 
+    <script src="eventlistener.js" charset="utf-8"></script>
   </body>
 </html>
