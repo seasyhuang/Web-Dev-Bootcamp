@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>jQuery Notes</title>
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <iframe src="notes-navbar4.html" frameborder="0" width="100%" height="70px"></iframe>
+
+    <div class="container">
+      <div class="jumbotron pl-5">
+        <h1 class="display-2 text-info">jQuery</h1>
+        <h2 class="display-5">Section 18</h2>
+      </div>
+
+      <ul>
+        <li class="lecture">Lecture 205: Intro to jQuery</li>
+        <ul>
+          <li>a dom manipulation library</li>
+          <li>the most popular js library</li>
+          <li>a file of javascript</li>
+        </ul>
+
+        <li class="lecture">Lecture 206: when to use jQuery</li>
+        <ul>
+          <li>why not just always use jQuery?</li>
+          <li>everything you can do with jQuery you can do without it</li>
+          <li>ongoing debate in the developper community</li>
+          <li>why use jQuery?</li>
+          <ul class="inner">
+            <li>easier and quicker to interact with dom api</li>
+            <li>built in cross browser support</li>
+            <li>provides ajax</li>
+            <li>lots of people use jQuery</li>
+          </ul>
+          <li>when not to use jquery?</li>
+          <ul class="inner">
+            <li>dom api is no longer broken</li>
+            <li>unnecessary dependency, performance, lots of people are moving away from it</li>
+            <li>could be inefficient/slower</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 207: including jQuery</li>
+        <ul>
+          <li>download and include locally</li>
+          <li>or link to <a href="https://code.jquery.com/">CDN</a> (content distributed network)</li>
+          <li>note: it's good practice to make a folder called <code>lib</code> to separate library files from own files</li>
+          <li>compressed/min is faster to load</li>
+          <li>cdn: <code>< script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></ script></code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 208/9: selecting with jQuery</li>
+        <ol>
+          <li><a href="jquerydemo.html">jquerydemo.html</a> </li>
+        </ol>
+        <ul>
+          <li>note: to access same output as colt, use <code>$('h1')[0];</code> - otherwise you get the jQuery object, not the HTML element (what you want)</li>
+          <li>use <code>$</code> - which functions like <code>querySelectorAll</code> </li>
+          <li>to change the property of the thing you selected, use the method <code>.css(property, value)</code>:</li>
+          <li>ex: <code>$("#adorable").css("border","2px solid red")</code> </li>
+          <li>without jQuery: <code>document.querySelector("#adorable").style.border = "2px solid red"</code> </li>
+          <li>jquery css is more powerful: you can make an object (ex: <code>styles</code>) and define multiple styles to pass into <code>.css(styles)</code> </li>
+          <ul class="inner">
+            <li><code>var styles = { color: "red", background: "pink", border: "green 2px dashed" }</code> </li>
+            <li><code>$("h1").css(styles)</code> </li>
+          </ul>
+          <li>you can also select and apply styles to multiple elements - <strong>without needing forloops</strong> </li>
+          <ul class="inner">
+            <li><code>$("li").css("color", "blue")</code> would make all li's blue</li>
+          </ul>
+          <li>note that css uses <code>font-size</code>, but js uses <code>fontSize</code> </li>
+          <li>$ returns everything in a list, even if there's only one thing selected</li>
+        </ul>
+
+        <li class="lecture">Lecture 210: selector exercise</li>
+        <ol>
+          <li><a href="jqueryexercise.html">jqueryexercise.html</a> </li>
+        </ol>
+        <ul>
+          <li><code>$("div").css("background", "purple")</code> </li>
+          <li><code>$(".highlight").css("width", "200px")</code> </li>
+          <li><code>$("#third").css("border", "2px solid orange")</code> </li>
+          <li>using <code>:first</code> (built into jquery, slower) or <code>:first-of-type</code> (native css, faster) selects the first div - <code>$("div:first").css("color", "pink")</code></li>
+        </ul>
+
+        <li class="lecture">Lecture 211: text and html</li>
+        <ol>
+          <li><a href="methods.html">methods.html</a> </li>
+          <li><a href="https://api.jquery.com/text/">jquery text methods</a> </li>
+        </ol>
+        <ul>
+          <li>the method <code>.text()</code> works the same as css' <code>textContent</code> </li>
+          <li><code>$("li").text()</code> would return all the text in one string</li>
+          <li>to set text: <code>$("li:first").text("fdsafdsafsa")</code> --> text would be "fdsafdsafsa" </li>
+          <li>the method <code>.html()</code> works like <code>innerHTML</code> </li>
+          <li>the text function is considered html-safe - user can't mess up site by typing in html or js</li>
+        </ul>
+
+        <li class="lecture">Lecture 212: attr and val</li>
+        <ol>
+          <li><a href="jqueryexercise.html">jqueryexercise.html</a> </li>
+        </ol>
+        <ul>
+          <li>the <code>.attr()</code> method </li>
+          <li>to change image size: <code>$('img').css("width", "200px")</code> </li>
+          <li>to change image src: <code>$('img').attr("src", "http://4.bp.blogspot.com/-LWMlGeDkfeA/T0UM1LpkFOI/AAAAAAAACcM/oXXlYkAMDgc/s1600/cute+Cat+picture.jpg")</code> </li>
+          <li>get last element in list: <code>$('img').last()</code> </li>
+          <li>the <code>.val()</code> method can both get and set values (ex: text inputs). to set: <code>$('input').val("hi")</code> </li>
+          <li>common use for .val: to reset text input after user enters something</li>
+          <li>works with dropdown too</li>
+        </ul>
+
+        <li class="lecture">Lecture 213: manipulating classes</li>
+        <ol>
+          <li><a href="jqueryexercise.html">jqueryexercise.html</a> </li>
+        </ol>
+        <ul>
+          <li>adding classes w jquery</li>
+          <li>ex: <code>$('h1').addClass("correct")</code> </li>
+          <li>these methods all have implicit loops too</li>
+          <li>methods: <code>addClass(), removeClass(), toggleClass()</code> </li>
+        </ul>
+      </ul>
+
+      <h1 class="my-3 text-info">Advanced jQuery</h1>
+      <ul>
+        <li class="lecture">Lecture 214: click events</li>
+
+      </ul>
+
+    </div>
+
+    <script src="eventlistener.js" charset="utf-8"></script>
+  </body>
+</html>

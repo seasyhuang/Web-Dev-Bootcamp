@@ -22,6 +22,8 @@ p1btn.addEventListener("click", function(){
   }
 });
 
+
+
 p2btn.addEventListener("click", function(){
   if (!gameOver) {
     p2score++;

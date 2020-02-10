@@ -1,5 +1,7 @@
 body {
   background-color: #232323;
+  margin: 0;
+  font-family: "Avenir", "Montserrat";
 }
 
 .square {
@@ -9,19 +11,77 @@ body {
   /* if no float left, everything would be in one huge column */
   float: left;
   margin: 1.66%;
+  border-radius: 15%;
+  transition: background 0.6s;
+  -webkit-transition: background 0.6s;
+  -moz-transition: background 0.6s;
 }
 
 #container {
   max-width: 600px;
-  /* centers the container */
-  margin: 0 auto;
+  /* "auto" in the left-right direction centers the container */
+  margin: 20px auto;
 }
 
 h1 {
   color: white;
   text-align: center;
+  background: steelblue;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 20px 0;
+}
+
+h1 span {
+  text-transform: uppercase;
+  font-size: 200%;
 }
 
 span {
   color: white;
+}
+
+.stripe {
+  background-color: white;
+  height: 30px;
+  text-align: center;
+}
+
+.stripe button {
+  text-transform: uppercase;
+}
+
+#message {
+  color: black;
+  /* setting the display to inline block and the width to 20% pre-creates the space and pushes the elements to the sides */
+  display: inline-block;
+  /* 20% of the screen */
+  width: 20%;
+}
+
+.selected {
+  background: steelblue;
+  color: white;
+}
+
+button {
+  border: none;
+  background: none;
+  height: 100%;
+  font-weight: 700;
+  color: steelblue;
+  letter-spacing: 1px;
+  font-size: inherit;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  /* gets rid of the annoying browser outline */
+  outline: none;
+}
+
+button:hover {
+  color: white;
+  background: steelblue;
 }
