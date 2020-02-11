@@ -136,8 +136,56 @@
       <h1 class="my-3 text-info">Advanced jQuery</h1>
       <ul>
         <li class="lecture">Lecture 214: click events</li>
+        <ul>
+          <li>the 3 most important ones: <code>click()</code>, <code>keypress()</code>, <code>on()</code> </li>
+          <li>ex: <code>$('button').click(function(){...})</code> </li>
+          <li>ex: <code>$('h1').click(function(){ alert("h1 clicked"); })</code> </li>
+          <li>refering to the element that was clicked: jQuery version of 'this': <code>$(this)</code> </li>
+        </ul>
 
+        <li class="lecture">Lecture 216: keypress</li>
+        <ul>
+          <li>fires in between key was pressed up and down</li>
+          <li>there's also keyup and keydown, but keypress is the most common</li>
+          <li>you can listen for a keypress but only do something when the use presses enter (for example)</li>
+          <li>"which" is the keycode for a keypress - for enter, it's 13</li>
+          <li><code>$('input').keypress(function(event){ if(event.which === 13) { alert('you hit enter'); } })</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 217: on</li>
+        <ul>
+          <li>can take the place of all the methods above</li>
+          <li>need to select something, then call on. need to specify what kind of event we're listening for</li>
+          <li>Ex to change the clicked h1 to purple: <code>$('h1').on('click', function(){
+            $(this).css("color", "purple");
+          })</code> </li>
+          <li>hover: <code>"mouseenter"</code> instead of click </li>
+          <li>but css has pseudoselector for hover, so typically you wouldn't do this with js</li>
+        </ul>
+
+        <li class="lecture">Lecture 218: jQuery effects</li>
+        <ol>
+          <li><a href="jqueryeffects.html">jqueryeffects.html</a> </li>
+          <li><a href="effects.js">effects.js</a> </li>
+        </ol>
+        <ul>
+          <li>fading three divs in and out</li>
+          <li>fade: fadeIn, Out, Toggle</li>
+          <li>slide: slideUp, Down, Toggle</li>
+          <li>all set <code>display: none</code> at the end </li>
+          <li>remember that you have to put things in the callback function otherwise they won't wait for the fade to finish</li>
+        </ul>
       </ul>
+
+      <h1 class="my-3 text-info">Todo List Projects</h1>
+      <ul>
+        <li class="lecture">Lecture 219/20: intro</li>
+        <ul>
+          <li>jQuery fadeOut and fadeToggle methods, but slide animation (for the trashcan icon) will be done with CSS, not jQuery. </li>
+          <li>the .fadeOut() method will not work with the .slim version of jQuery. The regular .min version should be used instead.</li>
+        </ul>
+      </ul>
+
 
     </div>
 
