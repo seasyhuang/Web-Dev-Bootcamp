@@ -183,7 +183,52 @@
         <ul>
           <li>jQuery fadeOut and fadeToggle methods, but slide animation (for the trashcan icon) will be done with CSS, not jQuery. </li>
           <li>the .fadeOut() method will not work with the .slim version of jQuery. The regular .min version should be used instead.</li>
+          <li>a better folder structure</li>
+          <li>event delegation, font awesome</li>
         </ul>
+
+        <li class="lecture">Lecture 221: folder structure</li>
+        <ol>
+          <li><a href="todolist">todolist files</a></li>
+        </ol>
+        <ul>
+          <li>index is in the main folder</li>
+          <li>new folder called <code>asset</code> that has a folder each for <code>js</code> and <code>css</code> </li>
+          <li>inside js: <code>lib</code> folder </li>
+          <li>actually adding jquery instead of using the cdn (because this is a 'serious' project)</li>
+        </ul>
+
+        <li class="lecture">more notes</li>
+        <ul>
+          <li>when comparing colors in js, js uses <code>rgb colors</code> </li>
+          <li>checking for properties in the js is stupid, just use <code>toggleClass</code> </li>
+          <li>event bubbling - when events bubble up into parent elements</li>
+          <ul class="inner">
+            <li>to prevent this, need to tell event not to bubble up</li>
+            <li>easy to do: add <code>event</code> in the function input, and add line <code>event.stopPropagation();</code> </li>
+            <li><code>$('span').on("click", function(event){ event.stopPropagation(); })</code> </li>
+          </ul>
+          <li>easy way to access parent using jQuery: <code>.parent()</code> </li>
+          <li>checking if the user has clicked enter:</li>
+          <ul class="inner">
+            <li><code>$("input[type='text']").keypress(function(event){
+              if (event.which === 13) {
+                console.log('fjdkasl');
+              }
+            });</code> </li>
+          </ul>
+          <li>new method: <code>.append()</code> - appends as <strong>html</strong> </li>
+          <li>using the <code>on</code> method to add listeners to elements that weren't on the page yet - see the comments in <a href="assets/js/todos.js">todos.js</a> </li>
+          <li>get rid of bullets in ul <code>list-style: none;</code> </li>
+          <li>get rid of gross looking default outline: <code>outline: none;</code>  </li>
+          <li>new property: <code>box-sizing: border-box;</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing">read more on mdn</a> </li>
+          <ul class="inner">
+            <li>basically: tells the browser to account for any border and padding in the values you specify for an element's width and height.</li>
+          </ul>
+
+        </ul>
+
+
       </ul>
 
 
