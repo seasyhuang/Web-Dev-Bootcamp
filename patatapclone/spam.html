@@ -86,7 +86,12 @@
       function onFrame(event) {
         for (var i = 0; i < circles.length; i++) {
           circles[i].scale(.9);    // shrinks
-          circles[i].fillColor += 1;   // change hue slightly
+          circles[i].fillColor.hue += 1; // change hue slightly
+          if(circles[i].area < 1){
+            circles[i].remove(); // remove the circle from the canvas
+            circles.splice(i, 1); // remove the circle from the array
+            console.log(circles);
+          }
         }
       }
 

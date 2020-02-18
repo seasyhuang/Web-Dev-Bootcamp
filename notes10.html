@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>Backend Notes</title>
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <iframe src="notes-navbar4.html" frameborder="0" width="100%" height="70px"></iframe>
+
+    <div class="container">
+      <div class="jumbotron pl-5">
+        <h1 class="display-2 text-info">Backend</h1>
+        <h2 class="display-5">Section 22-</h2>
+      </div>
+
+      <ul>
+        <li class="lecture">Lecture 241: Backend basics</li>
+        <ul>
+          <li>how the internet works: 60s ver</li>
+          <li>url (udemy) --> ip address --> http request sent to ip address</li>
+          <li>server (udemy) responds --> server sends html/css/js to me as http response --> browser renders html/css/js (page content) to what we see now </li>
+          <li>static vs dynamic webpages</li>
+          <ul class="inner">
+            <li>static: same css html js every time</li>
+            <li>dynamic: different content every time - server decides new content</li>
+          </ul>
+          <li>stack: all the web technology a web app uses - the choices of technology the developer uses</li>
+          <li>backend has a lot of variance: js, php, ruby, python</li>
+          <li>different websites use different stacks/technologies</li>
+          <li>backend: the logic </li>
+          <ul class="inner">
+            <li>we'll be using node js, express framework, and mongodb</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 242/3: Postman (HTTP in Depth)</li>
+        <ul>
+          <li>chrome app called Postman - you can send requests from many places</li>
+          <li>request information - <code>get</code> </li>
+          <li>update information - <code>put, patch</code> </li>
+          <li>delete something - <code>delete</code> </li>
+          <li>remember that http is a protocol</li>
+          <li>example <code>get</code> request:</li>
+          <ul class="inner">
+            <li><code>body</code> is the content</li>
+            <li><code>header</code> is metadata from request</li>
+            <li>header <code>content-Type</code> says what kind of response you're getting (ex <code>text/html</code>)</li>
+            <li><code>status</code> - 200 is ok</li>
+            <li>query example: <code>q=cats</code>, q is query, cats is what we're searching for in the database</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 244/5: backend workflow 1-2</li>
+        <ul>
+          <li>concepts of workflow</li>
+          <li>file has setup, routes, etc</li>
+          <li>server file written in js - listens for requests and sends responds</li>
+          <li>start server at port 3000 - you can open the webpage on your browser on <code>localhost:3000</code> </li>
+          <li><code>routes</code> - listens for (ex) <code>get</code>, decides what file to send back, (ex) renders("home") </li>
+          <ul class="inner">
+            <li>term: "get route", "post route", etc</li>
+          </ul>
+          <li>adding information: <code>post</code> request, which 99% of the time is done through a form</li>
+          <li>ex: in the post request <code>body</code>, send name(=charlie) and breed(=golden)</li>
+          <li>need a <code>form</code> in the html for this to make sense:</li>
+          <ul class="inner">
+            <li>form <code>action</code> - where you want to send, <code>method</code> - post</li>
+            <li>for form inputs: input <code>name</code> is the important part - tells the form what to put in the post request body (see above) </li>
+          </ul>
+          <li>after making post request, will always send get request after (even if you didn't explicitly ask) back to the same page </li>
+        </ul>
+
+        <li class="lecture">Lecture 246-8: cloud9</li>
+        <ul>
+          <li>ignoring cloud9</li>
+          <li>The original c9.io has been closed down</li>
+          <li>alternative: GoormIDE</li>
+          <li>ignoring the alternative - using terminal (setting up a <strong>local development environment</strong>)</li>
+          <li><a href="https://zarkom.net/blogs/mac-local-coding-environment-6283">instructions</a> </li>
+          <li><a href="https://www.youtube.com/watch?v=lGKf_7ugFUQ"></a>How to install and use Node Version Manager (NVM)</li>
+          <li><a href="https://www.youtube.com/watch?v=DX15WbKidXY"></a>install MongoDB </li>
+          <li>bottom of Cloud9 browser interface: <strong>command line (terminal)</strong> --> <strong>same bash terminal</strong></li>
+          <li>biggest portion of the screen: Cloud9’s built-in code <strong>editor</strong> -->  <strong>whatever text editor</strong></li>
+          <li>left-hand sidebar: file view in Cloud9 --> Mac OS X file manager (Finder)</li>
+          <li>Running and previewing our apps locally: </li>
+          <ul class="inner">
+            <li>To run and preview your projects/applications, you need to use your system terminal, change directories to navigate to your project folder and then run <code>node app.js</code> to start the application (just like Colt does in Cloud9) </li>
+            <li>important change: need to <strong>manually define the port</strong> that the app is listening to (this is handled differently in Cloud9)</li>
+            <li><strong>DON'T</strong> use <code>app.listen() </code> </li>
+            <li>instead: <code>
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("Server Has Started!");
+});
+            </code> </li>
+            <li>--> Then, you will be able to preview your app by going into your browser at <code>localhost:3000 </code> </li>
+          </ul>
+          <li>heroku:</li>
+          <ul class="inner">
+            <li>a service which we use to publish our Node.js application on the internet, towards the end of the course</li>
+            <li><a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install">installation</a> </li>
+          </ul>
+        </ul>
+
+        <h1 class="my-3 text-info">Command Line</h1>
+        <li class="lecture">Lecture 249: solutions on github</li>
+        <ul>
+          <li><a href="https://github.com/nax3t/webdevbootcamp">github</a> </li>
+        </ul>
+
+
+
+
+
+        <li class="lecture">Lecture 241: selector exercise</li>
+        <ol>
+          <li><a href="jqueryexercise.html">jqueryexercise.html</a> </li>
+        </ol>
+        <ul>
+          <li><code>$("div").css("background", "purple")</code> </li>
+          <li><code>$(".highlight").css("width", "200px")</code> </li>
+          <li><code>$("#third").css("border", "2px solid orange")</code> </li>
+          <li>using <code>:first</code> (built into jquery, slower) or <code>:first-of-type</code> (native css, faster) selects the first div - <code>$("div:first").css("color", "pink")</code></li>
+        </ul>
+
+
+
+      </ul>
+    </div>
+
+    <script src="eventlistener.js" charset="utf-8"></script>
+  </body>
+</html>
