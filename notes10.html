@@ -142,30 +142,79 @@ app.listen(port, function () {
 
         <h1 class="my-3 text-info">NodeJS</h1>
         <li class="lecture">Lecture 255: indroduction to node</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <li class="lecture">Lecture 241: selector exercise</li>
-        <ol>
-          <li><a href="jqueryexercise.html">jqueryexercise.html</a> </li>
-        </ol>
         <ul>
-          <li><code>$("div").css("background", "purple")</code> </li>
-          <li><code>$(".highlight").css("width", "200px")</code> </li>
-          <li><code>$("#third").css("border", "2px solid orange")</code> </li>
-          <li>using <code>:first</code> (built into jquery, slower) or <code>:first-of-type</code> (native css, faster) selects the first div - <code>$("div:first").css("color", "pink")</code></li>
+          <li>what is node? a js runtime built on chrome's v8 javascript engine</li>
+          <ul class="inner">
+            <li>all our js was previously run on the browser</li>
+            <li>node is a way to write js on the serverside (backend)</li>
+            <li>before node, backend was python, java, ruby, etc - now we can write js on the server side</li>
+          </ul>
+          <li>why are we learning it?</li>
+          <ul class="inner">
+            <li>it's popular</li>
+            <li>js overtook ruby in 2012 as most popular language</li>
+            <li>php vs nodejs:</li>
+            <ul class="inner">
+              <li>large community</li>
+              <li>php has been around for a long time</li>
+              <li>node has great libraries and is in js</li>
+              <li>node is high-performance</li>
+            </ul>
+            <li>node is in js: don't need to pick up another language</li>
+            <li>best first server side language to start out with</li>
+          </ul>
+          <li>it doesn't matter longterm - easy to transition to another language in the future</li>
         </ul>
 
+        <li class="lecture">Lecture 265: using node</li>
+        <ul>
+          <li>node console: open in the terminal, type/use js, etc</li>
+          <li>not that useful</li>
+          <li>can't use <code>alert</code>, <code>document</code>, etc - those come with the browser</li>
+          <li>how to "run a file with node" - execute a js file in the command line</li>
+          <li>use in console: <code>node [filename]</code> (see ex: hello.js)</li>
+        </ul>
+
+        <li class="lecture">Lecture 266-7: node exercises</li>
+        <ol>
+          <li><a href="introtonode/echo.js">echo.js</a> </li>
+          <li><a href="introtonode/grader.js">grader.js</a> </li>
+        </ol>
+
+        <li class="lecture">Lecture 268: intro to npm</li>
+        <ul>
+          <li>npm: <strong>node pacakge manager</strong> </li>
+          <li>what is it?</li>
+          <ul class="inner">
+            <li>NPM is a package manager for js</li>
+            <li>including a library - you can't just use a script tag in backend</li>
+            <li>packages someone else has written that you can include</li>
+            <li>npm has a command line tool - easy to install packages</li>
+          </ul>
+          <li>we'll be downloading <code>express</code> (a framework), <code>mongoose</code>, <code>morgan</code>, <code>body-parser</code>, and more</li>
+        </ul>
+
+        <li class="lecture">Lecture 269-70: installing npm packages</li>
+        <ol>
+          <li><a href="introtonode/demoapp">demoapp folder</a> </li>
+          <li><a href="introtonode/demoapp/app.js">app.js</a> </li>
+        </ol>
+        <ul>
+          <li>note: Also (for the next lecture), the cat-me package has changed slightly since the video was created. Now, when you open up the cat-me folder from within the node_modules directory you will find all of the cats inside of cats.json (instead of cats.js).</li>
+          <li>using <code>npm install</code> </li>
+          <li>using <code>require()</code> to include packages</li>
+          <li>after running <code>npm install cat-me</code>, files will be downloaded in the <code>nodemodules</code> folder inside our demoapp folder (either will create this folder if it doesn't exist, or add to the folder if it does)</li>
+          <li>example: <code>var catMe = require("cat-me"); console.log(cat());</code> </li>
+          <li>also did same thing with <code>knock-knock-jokes</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 271-2: npm faker exercise</li>
+        <ol>
+          <li><a href="introtonode/MyShop/listProducts.js">listProducts.js</a> </li>
+        </ol>
+        <ul>
+          <li><a href="https://www.npmjs.com/package/faker">faker</a> is a pretty commonly used package for generating random fake data </li>
+        </ul>
 
 
       </ul>
