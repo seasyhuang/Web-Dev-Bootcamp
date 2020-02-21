@@ -214,7 +214,120 @@ app.listen(port, function () {
         </ol>
         <ul>
           <li><a href="https://www.npmjs.com/package/faker">faker</a> is a pretty commonly used package for generating random fake data </li>
+          <li>** 60% done course</li>
         </ul>
+
+        <h1>personal exercise: calculateTimeLeft.js, times.js</h1>
+
+        <h1 class="my-3 text-info">Server Side Frameworks</h1>
+        <li class="lecture">Lecture 264: introduction to express</li>
+        <ul>
+          <li>frameworks: code that other people wrote that we can use</li>
+          <li>framework vs library: library - you're in control; framework - it calls you</li>
+          <li>we want to make things faster, so we use a framework</li>
+          <li>decisions have been made for us, and we fill in the blanks</li>
+          <li>express is a web dev framework (there are many out there)</li>
+          <ul class="inner">
+            <li>by using express, we can focus on the application and not the setup</li>
+            <li>we use express because it's the most important node web dev framework, there's a lot of tutorials, and it's a lightweight framework</li>
+            <li>heavy vs light weight framework: heavier weight frameworks have fewer blanks to fill in </li>
+            <li>ex: rails is a heavy weight framework - hard to explain, and you have less of idea of what's going on </li>
+            <li><a href="https://expressjs.com/">express</a> homepage</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 265: note</li>
+        <ul>
+          <li><code>
+            app.listen(3000, function() {
+  console.log('Server listening on port 3000');
+});
+          </code> </li>
+          <li>OR: start the app with <code>PORT=3000 node app.js</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 266: first express app</li>
+        <ol>
+          <li><a href="introtonode/firstexpressapp">firstexpressapp folder</a> </li>
+          <li><a href="introtonode/firstexpressapp/app.js">app.js</a> </li>
+        </ol>
+        <ul>
+          <li>server decides what to send back in response to your http request</li>
+          <li>dog demo app</li>
+          <ul class="inner">
+            <li>routes - code responsible for <strong>listening</strong> and receiving requests and deciding what to send back</li>
+            <li>ex: post, get home, get /, etc</li>
+            <li>routes are code that runs bits of other code</li>
+          </ul>
+          <li>start: <code>node app.js</code> (or) <code>PORT=3000 node app.js</code> </li>
+          <li>install node <code>npm install express</code> --> new files in directory associated with framework</li>
+          <li>require express: <code>var express = require("express");</code> </li>
+          <li>set it to a variable, usually called app: <code>var app = express();</code> </li>
+          <li>very basic get request: <code>app.get("/", function(req, res){ res.send("hi there"); });</code> </li>
+          <li>once the server has started, can't type anything anymore --> go to <a href="localhost:3000">localhost:3000</a> </li>
+          <li>you can use postman to send requests too</li>
+        </ul>
+
+        <li class="lecture">Lecture 267: the package.json</li>
+        <ul>
+          <li>what is the package.json file?</li>
+          <ul class="inner">
+            <li>javascript object notation</li>
+            <li>all the information about express</li>
+            <li>dependencies - all the packages express relies on</li>
+            <li>imagine you have a great recipe and your friend wants to recreate it - you could send all the ingredients in a big box and send it, or you could just send your friend a letter with all the ingredients  </li>
+            <li>the package.json is the shopping list </li>
+            <li>it contains a list of <strong>metadata</strong> about a package, the version, etc</li>
+          </ul>
+          <li>what does the <code>--save</code> mean at the end of <code>npm install express --save</code> ?</li>
+          <ul class="inner">
+            <li>when we install a package with npm install, we add --save</li>
+            <li>it will take package name and version and automatically save it into our package.json file </li>
+          </ul>
+          <li>the line <code>npm init</code> will create a package.json file for us in a new directory (the folder where you want the app to exist) </li>
+          <li>example: <code>npm install cat-me --save</code> will automatically add "cat-me" to our dependencies section of our package.json</li>
+        </ul>
+
+        <li class="lecture">Lecture 268: nodemon</li>
+        <ul>
+          <li>automating node server restart with nodemon</li>
+          <li><a href="https://www.youtube.com/watch?v=GvLvrlOqq9g&feature=youtu.be">youtube video here</a> </li>
+          <li>install with <code>npm i -g nodemon</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 269: route params</li>
+        <ul>
+          <li>* route matcher</li>
+          <ul class="inner">
+            <li>using <code>app.get("*", ...</code> - every other route that isn't defined (good for error message) </li>
+            <li>the catchall needs to be UNDER all the other routes - order of routes MATTERS</li>
+          </ul>
+          <li>writing routes with route parameters</li>
+          <ul class="inner">
+            <li>example: reddit.com</li>
+            <li>routes - the subreddit for <code>/r/soccer</code> </li>
+            <li>there are 1000s of subreddits - there is not a route defined for every subreddit</li>
+            <li>instead, probably uses patterns: <code>/r/:subredditname</code> </li>
+            <li>you do this with route/path parameters (see the colon)</li>
+            <li>see more examples in <a href="introtonode/firstexpressapp/app.js">app.js</a> </li>
+          </ul>
+          <li>discussing route order</li>
+        </ul>
+
+        <li class="lecture">Lecture 270/1: basic express exercise</li>
+        <ul>
+          <li>you can only do <code>res.send()</code> once - can't do it multiple times in a response</li>
+          <li>important during forloop (see <code>app.get("/repeat/:word/:num", ...</code>)</li>
+        </ul>
+
+        <h1 class="my-3 text-info">Intermediate Express</h1>
+        <li class="lecture">Lecture 272: note</li>
+        <ul>
+          <li></li>
+        </ul>
+
+
+
 
 
       </ul>

@@ -14,32 +14,33 @@ var times = [
   // "1hr 40min",
   // "46min",
   // "1hr 16min",    // 15: dom manip
-  "1hr 16min",
-  "1hr 48min",
-  "1hr 9min",
-  "35min",
-  "1hr 16min",
-  "1hr 11min",
-  "1hr 1min",
-  "37min",
-  "58min",
-  "1hr 13min",
-  "1hr 14min",
-  "1hr 34min",
-  "58min",
-  "54min",
-  "42min",
-  "1hr 57min",
-  "39min",
-  "1hr 17min",
-  "59min",
-  "40min",
-  "44min",
-  "1hr 25min",
-  "1hr 20min",
-  "52min",
-  "1hr 11min",
-  "1hr 3min", ]
+  // "1hr 16min",
+  // "1hr 48min",
+  // "1hr 9min",
+  // "35min",
+  // "1hr 16min",
+  // "1hr 11min",
+  // "1hr 1min",
+  // "37min",
+  // "58min",       // thurs/20
+  "1hr 13min",    // fri/21
+  "1hr 14min",    // sat/22
+  "1hr 34min",    // sun/23
+  "58min",        // m/24
+  "54min",        // t/25
+  "42min",        // w/26
+  "1hr 57min",        // th/27
+  "39min",        // f/28
+  "1hr 17min",        // s/29
+  "59min",        // s/1
+  "40min",        // m/2
+  "44min",        // t/3
+  "1hr 25min",        // w/4
+  "1hr 20min",        // th/5
+  "52min",        // f/6
+  "1hr 11min",        // s/7
+  "1hr 3min",       // s/8
+]
 
 function addTimes(array) {
   var finalTime = 0;
@@ -62,4 +63,7 @@ function addTimes(array) {
 }
 
 var ft = addTimes(times) / 60;
-console.log(ft + " hours");
+console.log(ft + " hours left");
+
+var total = 47.11666666666667;
+console.log("Percent done: " + (total-ft)/total);
