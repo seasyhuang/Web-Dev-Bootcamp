@@ -323,8 +323,33 @@ app.listen(port, function () {
         <h1 class="my-3 text-info">Intermediate Express</h1>
         <li class="lecture">Lecture 272: note</li>
         <ul>
-          <li></li>
+          <li>Project names need to be all lowercase and contain url friendly characters, e.g., no spaces, instead use a hyphen.</li>
+          <li>While creating a new node project with npm init, be sure not to name the project (or the folder that the project lives inside of) the same as any of the node packages being used in the project itself.</li>
         </ul>
+
+        <li class="lecture">Lecture 273: templates and ejs</li>
+        <ul>
+          <li>(got lazy and didn't code any examples for this lesson)</li>
+          <li>you may see: <code>var express = require('express')();</code> </li>
+          <li>root route: <code>'/'</code> </li>
+          <li>you can send the res as html</li>
+          <li>easier way to send back the contents of a file: <code>res.render(name of file)</code> </li>
+          <li>ex: <code>res.render("dogs.html")</code> - this would be a static html file</li>
+          <li><code>.ejs</code> </li>
+          <li>the templates need to exist in a views file where express will automatically look for them</li>
+          <ul class="inner">
+            <li>--> need to make a folder called <code>views</code>, where express will look for the files ending in <code>.ejs</code> - embedded javascript</li>
+          </ul>
+          <li>need to install the package <code>ejs</code> (with npm) --save </li>
+          <li>sending back a rendered ejs (html) file // filled template (not a static template)</li>
+          <li>ejs treats things like this as <code><%= js stuff %></code> (ejs brackets) </li>
+          <li>need to send variables to the ejs file by passing them through the render method as objects: </li>
+          <ul class="inner">
+            <li>hardcoded: <code>res.render(love.ejs, {thingVar: "Rusty"});</code> </li>
+          </ul>
+          <li>dynamic html pages!</li>
+        </ul>
+
 
 
 
