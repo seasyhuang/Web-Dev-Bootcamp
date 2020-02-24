@@ -20,7 +20,7 @@
     <div class="container">
       <div class="jumbotron pl-5">
         <h1 class="display-2 text-info">Backend</h1>
-        <h2 class="display-5">Section 22-</h2>
+        <h2 class="display-5">Section 22-26</h2>
       </div>
 
       <ul>
@@ -328,6 +328,9 @@ app.listen(port, function () {
         </ul>
 
         <li class="lecture">Lecture 273: templates and ejs</li>
+        <ol>
+          <li><a href="introtonode/moreexpress/ejsdemo">ejsdemo</a> </li>
+        </ol>
         <ul>
           <li>(got lazy and didn't code any examples for this lesson)</li>
           <li>you may see: <code>var express = require('express')();</code> </li>
@@ -345,14 +348,59 @@ app.listen(port, function () {
           <li>ejs treats things like this as <code><%= js stuff %></code> (ejs brackets) </li>
           <li>need to send variables to the ejs file by passing them through the render method as objects: </li>
           <ul class="inner">
-            <li>hardcoded: <code>res.render(love.ejs, {thingVar: "Rusty"});</code> </li>
+            <li>hardcoded: <code>res.render("love.ejs", {thingVar: "Rusty"});</code> </li>
           </ul>
           <li>dynamic html pages!</li>
         </ul>
 
+        <li class="lecture">Lecture 274: EJS conditionals and loops</li>
+        <ol>
+          <li><a href="introtonode/moreexpress/ejsdemo/love.ejs">love.ejs</a> </li>
+        </ol>
+        <ul>
+          <li>when we're using js in the ejs file, there are three different types of ejs tag</li>
+          <li>using logic (loops): don't use <code><%=</code>, don't need the <code>=</code> (this returns the value inside the js) - we need to use <code><% </code> </li>
+          <li>when you want values: use <code><%=</code> </li>
+        </ul>
 
+        <li class="lecture">Lecture 275/6: serving custom assets</li>
+        <ol>
+          <li><a href="introtonode/moreexpress/ejsdemo/views/partials">partials</a> </li>
+        </ol>
+        <ul>
+          <li>syntax for including partials in your EJS view: <code><%- include("partials/header") %></code> </li>
+          <li>adding styles in <code>.ejs</code> files: </li>
+          <ul class="inner">
+            <li>it's not ideal to use the style tag</li>
+            <li>make a new folder for css files, commonly called <code>public</code> </li>
+            <li>we need to tell express to "serve" the public directory</li>
+            <li><code>app.use(express.static("public"));</code> </li>
+            <li>to tell express that we'll be using <code>.ejs</code> files, we can use <code>app.set("view engine", "ejs");</code> </li>
+          </ul>
+          <li>notice that we haven't been using the html boilerplate</li>
+          <li>we can use partials - templates - that we can include in other files</li>
+          <li>made a new folder at <code>/views/partials/</code>, and 2 new files (partials) <a href="introtonode/moreexpress/ejsdemo/views/partials/header.ejs">header.ejs</a> and <a href="introtonode/moreexpress/ejsdemo/views/partials/footer.ejs">footer.ejs</a>  </li>
+          <li>include with: <code><link rel="stylesheet" href="/app.css"></code> </li>
+        </ul>
 
-
+        <li class="lecture">Lecture 277/8: post requests</li>
+        <ol>
+          <li><a href="introtonode/moreexpress/postrequestdemo">postrequestdemo</a> </li>
+        </ol>
+        <ul>
+          <li>post route - updating things</li>
+          <li>same: <code>app.post('/addfriend', function(req, res){ ... </code> </li>
+          <li>on the <a href="introtonode/moreexpress/postrequestdemo/views/friends.ejs">friends.ejs</a> file, we made a new <code>form</code> </li>
+          <ul class="inner">
+            <li>form action must match the app.post url: <code>form action="/addfriend" method="post"</code> vs <code>app.post('/addfriend', function(req, res){</code> </li>
+            <li>clicking the button to submit the form will send us to the <code>/addfriend</code> url</li>
+            <li>to get the value of the form, add a <code>name</code> attribute to the input field: <code>input type="text" placeholder="name" name="newfriend"</code> </li>
+          </ul>
+          <li>to log the request body, we need to install <code>npm install body-parser --save</code> -  anytime we have a form that a user enters data into that we want to extract the data from on the server side, we need to use body parser (parses the body into a javascript object)</li>
+          <li>require it in the app.js: <code>var bodyParser = require("body-parser");</code> </li>
+          <li>tell express to use body parser: <code>app.use(bodyParser.urlencoded({extended: true}));</code> </li>
+          <li>in a post request, usually you don't want to go to a new page or anything - instead, use <code>res.redirect("/friends");</code>, which will take the name of a route and render it - like refreshing </li>
+        </ul>
 
 
       </ul>
