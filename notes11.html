@@ -25,7 +25,100 @@
 
       <ul>
         <li class="lecture">Lecture 279: intro to APIs</li>
+        <ul>
+          <li>application program(ming) interface - interface for codes/computers to talk to each other</li>
+          <li>information is requested in the same way you request data</li>
+          <li>good place to find APIs (directory): <a href="https://www.programmableweb.com/">ProgrammableWeb</a> </li>
+          <li>funny example: <a href="https://www.teslaapi.io/">tesla api</a> </li>
+          <li>web apis generally communicate through http requests</li>
+        </ul>
+
+        <li class="lecture">Lecture 280: JSON and XML</li>
+        <ul>
+          <li>how do they work, and what do they send back?</li>
+          <li>http request -- > get data back</li>
+          <li>data format: XML (extended markup language -  syntax is similar to HTML) and JSON (JavaScript Object Notation)</li>
+          <ul class="inner">
+            <li>note that eventhing in JSON is a string (need quotes around the key)</li>
+            <li>JSON is more popular - most of the time you're making calls in JS, so it's easier to use JSON</li>
+          </ul>
+          <li>chrome extention: <a href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh/related">json viewer</a></li>
+        </ul>
+
+        <li class="lecture">Lecture 281: making API request with node</li>
+        <ol>
+          <li><a href="introtonode/apis/firstrequest.js">firstrequest.js</a> </li>
+        </ol>
+        <ul>
+          <li>another way to request in command line: <code>curl</code> - ex <code>curl https://www.google.com/</code> gives all the information </li>
+          <li>example: <a href="https://github.com/request/request">github requests</a> </li>
+          <li>need to <code>npm install request</code> </li>
+          <li>in callback: <code>error</code>, <code>response</code>, <code>body</code> </li>
+          <li>run with <code>node firstrequest.js</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 282/3: sunset time API example</li>
+        <ul>
+          <li>note that this API was retired as of January 3rd, 2019</li>
+          <li>just watching for content</li>
+          <li>encode a space in a URL: <code>%20</code> </li>
+          <li>make sure to parse the JSON: <code>var parsedData = JSON.parse(body);</code> </li>
+          <li>access parts of the parsed body using <code>parsedData["key"]["..."]["etc"]</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 284/5: JSON placeholder API example</li>
+        <ol>
+          <li><a href="introtonode/apis/firstrequest.js">firstrequest.js</a> </li>
+          <li><a href="https://jsonplaceholder.typicode.com/">json placeholder</a> </li>
+          <li><a href="https://jsonplaceholder.typicode.com/users">go here to get data</a> </li>
+        </ol>
+        <ul>
+          <li>debugging package: <code>npm i -D error-stack-parser</code> -D for development </li>
+          <li>new ES6 notation: <code>console.log(`${parsed.name} lives in ${parsed.address.city}`);</code> - pur variables in <code>${variable}</code>, put everything in <code>`everything`</code> and you don't need to use <code>"" +</code> etc  </li>
+          <li>just watch a video on ES6 to learn the notation</li>
+        </ul>
+
+        <li class="lecture">Lecture 286-90: movie API app</li>
+        <ol>
+          <li><a href="https://www.omdbapi.com/">omdb</a> </li>
+        </ol>
+        <ul>
+          <li>note</li>
+          <ul class="inner">
+            <li>General search: <code>http://www.omdbapi.com/?s=guardians+of+the+galaxy&apikey=thewdb</code> </li>
+            <li>Search with Movie ID: <code>http://www.omdbapi.com/?i=tt3896198&apikey=thewdb</code> </li>
+            <li>So everything is exactly the same as Colt explains in the following videos, except you must append <code>&apikey=thewdb</code> to the end of your url.</li>
+          </ul>
+          <li>introduction</li>
+          <ul class="inner">
+            <li>you can npm install multiple things at once: <code>npm install --save express ejs request</code> </li>
+            <li>searching things with parameters example: <code>https://www.omdbapi.com/?s=star&apikey=thewdb</code> </li>
+          </ul>
+          <li>results route</li>
+          <ul class="inner">
+            <li>need to use wrapper function in the request: <a href="introtonode/movie/app.js">movie/app.js</a> </li>
+          </ul>
+          <li>displaying data</li>
+          <ul class="inner">
+            <li>need <code>app.set("view engine", "ejs")</code> </li>
+          </ul>
+          <li>adding search</li>
+          <ul class="inner">
+            <li><a href="introtonode/movie/views/search.ejs">search.ejs</a> </li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 28</li>
+        <ul>
+
+        </ul>
+        <h1 class="my-3 text-info">Section 28: YelpCamp Basics </h1>
+        <li class="lecture">Lecture 272: note</li>
+
+
       </ul>
+
+
     </div>
 
     <script src="eventlistener.js" charset="utf-8"></script>
