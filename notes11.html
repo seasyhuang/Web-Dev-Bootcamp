@@ -114,7 +114,39 @@
         </ul>
         <h1 class="my-3 text-info">Section 28: YelpCamp Basics </h1>
         <li class="lecture">Lecture 272: note</li>
-
+        <ul>
+          <li>initial routes</li>
+          <ul class="inner">
+            <li>setting up the files, folders, etc</li>
+          </ul>
+          <li>layout</li>
+          <ul class="inner">
+            <li>recall that partials are now included like: <code><%- include("partials/header") %></code> </li>
+            <li>we want to include bootstrap</li>
+          </ul>
+          <li>creating new campgrounds</li>
+          <ul class="inner">
+            <li>set up post routes</li>
+            <li>we're going to set up a post request to the same name as the get route: <code>app.post("/campgrounds", </code> </li>
+            <li>these are different routes because one is a post and one is a get</li>
+            <li>restful convention: <code>app.get("/campgrounds/new",</code> should let you generate a new campground </li>
+            <li>remember that the form action should be to the post request route <code>form action="/campgrounds"</code> </li>
+          </ul>
+          <li>basic styling</li>
+          <ul class="inner">
+            <li>use bootstrap 3.x</li>
+            <li>better header/title</li>
+            <li>responsive grid display</li>
+            <li>header tag has semantic meaning, but function is the same as a div</li>
+            <li>fixing the weird spacing because of different sized images: <code>div class="row" style="display:flex; flex-wrap: wrap;"</code> </li>
+          </ul>
+          <li>styling nav and forms</li>
+          <ul class="inner">
+            <li>navbar to every page</li>
+            <li>style form</li>
+            <li>bootstrap <code>form-group</code> adds nice spacing - see <a href="introtonode/yelpcamp/views/new.ejs">new.ejs</a>  </li>
+          </ul>
+        </ul>
 
       </ul>
 
