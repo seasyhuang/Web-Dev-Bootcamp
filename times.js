@@ -23,10 +23,10 @@ var times = [
   // "1hr 1min",
   // "37min",
   // "58min",       // thurs/20
-  "1hr 13min",    // fri/21
-  "1hr 14min",    // m/24
-  "1hr 34min",    // t/25
-  "58min",
+  // "1hr 13min",    // fri/21
+  // "1hr 14min",    // m/24
+  // "1hr 34min",    // t/25
+  // "58min",
   "54min",
   "42min",        // w/26
   "1hr 57min",        // th/27
