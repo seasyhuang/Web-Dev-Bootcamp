@@ -107,12 +107,10 @@
             <li><a href="introtonode/movie/views/search.ejs">search.ejs</a> </li>
           </ul>
         </ul>
+      </ul>
 
-        <li class="lecture">Lecture 28</li>
-        <ul>
-
-        </ul>
-        <h1 class="my-3 text-info">Section 28: YelpCamp Basics </h1>
+      <h1 class="my-3 text-info">Section 28: YelpCamp Basics </h1>
+      <ul>
         <li class="lecture">Lecture 272: note</li>
         <ul>
           <li>initial routes</li>
@@ -147,8 +145,62 @@
             <li>bootstrap <code>form-group</code> adds nice spacing - see <a href="introtonode/yelpcamp/views/new.ejs">new.ejs</a>  </li>
           </ul>
         </ul>
+      </ul>
+      </ul>
+
+
+      <h1 class="my-3 text-info">Section 29: Databases </h1>
+      <ul>
+        <li class="lecture">Lecture 298: what is a database?</li>
+        <ul>
+          <li>a collection of information/data with an interface (for interaction)</li>
+          <li>SQL (relational) vs NoSQL (non-relational)</li>
+          <ul class="inner">
+            <li>in a relational db, define object, and every instance of a user must follow the definition</li>
+            <li>if you want a user to have a relationship with a comment instance, you need a join table that lists the relationships, usually using IDs to represent each part of the relationship (user id, comment id)</li>
+            <li>everything is tabular (need definition beforehand) - not flexible</li>
+            <li>if you want to add fav color for one user, need fav color for all users</li>
+            <li>NoSQL dbs - don't need to define patterns beforehand</li>
+            <li>looks like JS - it's called bson, looks like a json</li>
+            <li>important: you can just nest comments in there, don't need another table</li>
+            <li>easily add favcolor to just one user</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 299: mongoDB</li>
+        <ul>
+          <li>mongoDB is a NoSQL database</li>
+          <li>one of the most popular dbs used with node rn</li>
+          <li>mean stack: mongo express angular node</li>
+          <li><a href="https://www.youtube.com/watch?v=DX15WbKidXY">installation instructions youtube video</a> </li>
+        </ul>
+
+        <li class="lecture">Lecture 300: mongoDB commands</li>
+        <ul>
+          <li>you need to run <code>mongod</code> to have mongo running the whole time - in another tab </li>
+          <li>to run the mongo server in another tab: <code>mongo</code> </li>
+          <li>make a db: <code>use [whatever name, we're using "dogs"]</code> </li>
+          <li>insert instance into collection: <code>db.dogs.insert({name: "rusty", breed: "mutt"})</code>, where db is the the dogs db </li>
+          <li>see all dbs: <code>show collections</code> </li>
+          <li>find all dogs in collection: <code>db.dogs.find()</code> - will return our dog rusty</li>
+          <li>find particular instance of dog: <code>db.dogs.find({name: "rusty"}) </code> </li>
+          <li>updating: <code>db.dogs.update({[something to select by]}, {$set: {[what you're updating]}}) </code> - ex: <code>db.dogs.update({breed: "mutt"}, {$set: {name: "tater"}})</code> </li>
+          <ul class="inner">
+            <li>the <code>$set: {...}</code> makes sure that the other key value pairs aren't overridden when you're updating</li>
+          </ul>
+          <li>removing from db: <code>db.dogs.remove({breed: "mutt"})</code> </li>
+          <li>removing from db - setting a limit: <code>db.dogs.remove({breed: "mutt"}).limit(1)</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 301: interacting with mongoDB from inside a js file </li>
+        <ul>
+          <li></li>
+        </ul>
+
+
 
       </ul>
+
 
 
     </div>
