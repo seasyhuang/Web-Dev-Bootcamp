@@ -142,7 +142,7 @@
           <ul class="inner">
             <li>navbar to every page</li>
             <li>style form</li>
-            <li>bootstrap <code>form-group</code> adds nice spacing - see <a href="introtonode/yelpcamp/views/new.ejs">new.ejs</a>  </li>
+            <li>bootstrap <code>form-group</code> adds nice spacing - see <a href="introtonode/yelpcamp/v12/views/new.ejs">new.ejs</a>  </li>
           </ul>
         </ul>
       </ul>
@@ -167,7 +167,7 @@
           </ul>
         </ul>
 
-        <li class="lecture">Lecture 299: mongoDB</li>
+        <li class="lecture">Lecture 299/300: mongoDB</li>
         <ul>
           <li>mongoDB is a NoSQL database</li>
           <li>one of the most popular dbs used with node rn</li>
@@ -175,7 +175,7 @@
           <li><a href="https://www.youtube.com/watch?v=DX15WbKidXY">installation instructions youtube video</a> </li>
         </ul>
 
-        <li class="lecture">Lecture 300: mongoDB commands</li>
+        <li class="lecture">Lecture 301: mongoDB commands</li>
         <ul>
           <li>you need to run <code>mongod</code> to have mongo running the whole time - in another tab </li>
           <li>to run the mongo server in another tab: <code>mongo</code> </li>
@@ -192,9 +192,35 @@
           <li>removing from db - setting a limit: <code>db.dogs.remove({breed: "mutt"}).limit(1)</code> </li>
         </ul>
 
-        <li class="lecture">Lecture 301: interacting with mongoDB from inside a js file </li>
+        <li class="lecture">Lecture 302-4: mongoose</li>
         <ul>
-          <li></li>
+          <li><a href="https://mongoosejs.com/">mongoose</a> - Object Document Modeling (ODM) package for Express</li>
+          <li>we would usem mongoose for example when we're adding or updating this to our array/'database' in previous code like yelpcamp</li>
+          <li>mongoose makes it easier to interact with mongoDB from inside a JS file - easier and cleaner, but not necessary</li>
+          <li>in the <a href="/Users/seasy/Documents/Projects/Web-Dev-Bootcamp/databases/cats.js">cats.js</a> file, in the <a href="/Users/seasy/Documents/Projects/Web-Dev-Bootcamp/databases">databases</a> directory, first <code>npm install mongoose</code> </li>
+          <li>make sure mongo is running <code>mongod</code> </li>
+          <li>to connect to mongo in the js file via mongoose: <code>mongoose.connect('mongodb://localhost:27017/dbname'); </code> </li>
+          <li>detailed comments in <a href="/Users/seasy/Documents/Projects/Web-Dev-Bootcamp/databases/cats.js">cats.js</a></li>
+          <li>added a cat to the db in js</li>
+          <li>now we can access the db in mongo console: <code>> use cat_app
+switched to db cat_app
+> show collections
+cats
+> db.cats.find()</code> </li>
+          <li>see how to create, add and save, and retrieve cats in <a href="/Users/seasy/Documents/Projects/Web-Dev-Bootcamp/databases/cats.js">cats.js</a></li>
+          <li>pretty much everything needs a callback</li>
+        </ul>
+      </ul>
+
+      <h1 class="my-3 text-info">Section 30: YelpCamp Data Persistance </h1>
+      <ul>
+        <li class="lecture">Lecture 305: adding mongoose to YelpCamp</li>
+        <ul>
+          <li>install and configure mongoose</li>
+          <li>setup campground model</li>
+          <li>note: always (for these examples) use <code>npm i -S mongoose@5.1.3</code> instead of normal install of mongoose </li>
+          <li>see detailed notes in <a href="introtonode/yelpcamp/v12/app.js">app.js</a> comments  </li>
+          <li>replacing the old <code>campgrounds</code> array with the database </li>
         </ul>
 
 
