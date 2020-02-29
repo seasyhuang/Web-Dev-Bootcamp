@@ -223,6 +223,27 @@ cats
           <li>replacing the old <code>campgrounds</code> array with the database </li>
         </ul>
 
+        <li class="lecture">Lecture 307-8: show route</li>
+        <ul>
+          <li>restful doutes:</li>
+          <ul class="inner">
+            <li>name of route - url/path - ver - description</li>
+            <li>index - /dogs - GET -  display a list of all dogs</li>
+            <li>new - /dogs/new - GET - displays a form to make a new dog</li>
+            <li>create - /dogs - POST - add new dog to DB</li>
+            <li>show - /dogs/:id - GET - shows info about one dog </li>
+          </ul>
+          <li>remember you need two routes for a post request - one to show the form, one for form to submit somewhere</li>
+          <li>the <code>show</code> route </li>
+          <ul class="inner">
+            <li>show one thing in particular</li>
+          </ul>
+          <li>see detailed notes in <a href="introtonode/yelpcamp/v12/app.js">app.js</a> comments  </li>
+          <li>how to delete everything: mongo - <code>db.collection.drop()</code> (ex - db.campgrounds.drop)</li>
+          <li>campgrounds.ejs should be renamed index.ejs</li>
+
+
+        </ul>
 
 
       </ul>
