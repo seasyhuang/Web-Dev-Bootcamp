@@ -27,10 +27,10 @@ var times = [
   // "1hr 14min",    // m/24
   // "1hr 34min",    // t/25
   // "58min",
-  "54min",
-  "42min",        // w/26
-  "1hr 57min",        // th/27
-  "39min",        // f/28
+  // "54min",
+  // "42min",        // w/26
+  // "1hr 57min",        // th/27
+  // "39min",        // f/28
   "1hr 17min",        // s/29
   "59min",        // s/1
   "40min",        // m/2

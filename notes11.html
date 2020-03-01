@@ -241,14 +241,45 @@ cats
           <li>see detailed notes in <a href="introtonode/yelpcamp/v12/app.js">app.js</a> comments  </li>
           <li>how to delete everything: mongo - <code>db.collection.drop()</code> (ex - db.campgrounds.drop)</li>
           <li>campgrounds.ejs should be renamed index.ejs</li>
-
-
         </ul>
-
-
       </ul>
 
+      <h1 class="my-3 text-info">Section 31: RESTful routing </h1>
+      <ul>
+        <li class="lecture">Lecture 309: intro to REST</li>
+        <ol>
+          <li><a href="RESTfulrouting/blogapp">blogapp folder</a> </li>
+          <li><a href="RESTfulrouting/blogapp/app.js">app.js</a> </li>
+        </ol>
+        <ul>
+          <li>a convention - for maaping our HTTP routes to CRUD (create, read, update, destroy) functionality</li>
+          <li>a pattern for naming the routes (ex. read: <code>/dogs:/id</code>, etc)</li>
+          <li>the focus of this section is the routes (he uses semantic UI instead of booststrap to show a different CSS framework)</li>
+          <li>the 7 RESTful routes</li>
+          <ul>
+            <li>INDEX - <code>/dogs</code> - GET </li>
+            <li>NEW - <code>/dogs/new</code> - GET </li>
+            <li>CREATE - <code>/dogs</code> - POST - create a new dog, then redirect somewhere</li>
+            <li>SHOW - <code>/dogs/:id</code> - GET - takes 1 ID and shows all the information about one specific dog </li>
+            <li>EDIT - <code>/dogs/:id/edit</code> - GET - shows edit form for one dog</li>
+            <li>UPDATE - <code>/dogs/:id</code> - PUT - update a particular dog, then redirect somewhere</li>
+            <li>DESTROY - <code>/dogs/:id</code> - DELETE - in a form, send delete request to delete a particular dog, then redirect somewhere</li>
+          </ul>
+          <li>the routes that aren't <code>get</code> requests redirect </li>
+          <li>notice that some paths are the same, but they're fundamentally different because the HTTP verb (get, put, etc) is different</li>
+        </ul>
 
+        <li class="lecture">Lecture 310: RESTful blog app: INDEX</li>
+        <ol>
+          <li><a href="RESTfulrouting/blogapp">blogapp folder</a> </li>
+          <li><a href="RESTfulrouting/blogapp/app.js">app.js</a> </li>
+          <li><a href="RESTfulrouting/blogapp/views/index.ejs">app.js</a> </li>
+        </ol>
+        <ul>
+          <li>we will be using the framework <a href="https://semantic-ui.com/">semantic ui</a></li>
+        </ul>
+
+      </ul>
 
     </div>
 
