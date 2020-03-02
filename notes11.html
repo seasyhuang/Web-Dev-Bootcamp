@@ -255,7 +255,7 @@ cats
           <li>a convention - for maaping our HTTP routes to CRUD (create, read, update, destroy) functionality</li>
           <li>a pattern for naming the routes (ex. read: <code>/dogs:/id</code>, etc)</li>
           <li>the focus of this section is the routes (he uses semantic UI instead of booststrap to show a different CSS framework)</li>
-          <li>the 7 RESTful routes</li>
+          <li><a href="chart.html">the 7 RESTful routes - chart.html</a> </li>
           <ul>
             <li>INDEX - <code>/dogs</code> - GET </li>
             <li>NEW - <code>/dogs/new</code> - GET </li>
@@ -277,6 +277,65 @@ cats
         </ol>
         <ul>
           <li>we will be using the framework <a href="https://semantic-ui.com/">semantic ui</a></li>
+        </ul>
+
+        <li class="lecture">Lecture 311/2: blog layout</li>
+        <ul>
+          <li>header and footer</li>
+          <li>adding <a href="https://semantic-ui.com/introduction/getting-started.html#install-semantic-ui">semantic ui</a> </li>
+          <li>semantic ui is organized bby component - you can get the CDN of just a component - but we want all of it, so <code>semantic.min.css</code> </li>
+          <li>CDN: <code>< link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" ></code> </li>
+          <li>navbar in semanti ui is <code>menu</code> </li>
+          <li>remember: to add our own stylesheets, it's better to put: <code>/public/stylesheets/app.css</code> - <a href="RESTfulrouting/blogapp/public/stylesheets/app.css">app.css</a> </li>
+        </ul>
+
+        <li class="lecture">Lecture 313/14: blog layout</li>
+        <ul>
+          <li>in this lecture: Colt introduces a new format for sending data to the server from a form.</li>
+          <li>Up to this point you have used the name attribute like so: <code>input type="text" name="title"</code> - now, it will be written like this: <code>input type="text" name="blog[title]"</code> </li>
+          <li>What this will do is, instead of making the value for title available directly from <code>req.body.title</code> it will put it inside of an object, like so: <code> req.body.blog.title</code> </li>
+          <li>Now all of the values from the inputs in the form get added into one object (<code>req.body.blog</code>) and you can easily input that data into the database simply by passing in <code>req.body.blog</code> to <code>Blog.create()</code> </li>
+          <li>we use the syntax: <code>name="blog[title]"</code> because it's specific to body-parser </li>
+          <hr>
+          <li>routes in this video: <code>new</code> (get to <code>/blogs/new</code>) and <code>create</code> (post to <code>/blog</code>)</li>
+        </ul>
+
+        <li class="lecture">Lecture 315/6: show</li>
+        <ul>
+          <li>get request: blogs/id</li>
+          <li>note: to show html vs just text:</li>
+          <ul class="inner">
+            <li><code><%- blog.body %></code> runs html, <code><%= blog.body %></code> shows just the text</li>
+          </ul>
+          <li>built into js: <code><%= blog.created.toDateString() %></code> </li>
+          <li>review: <code><%= blog.body.substring(0,100) + "..." %></code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 317: edit and update</li>
+        <ul>
+          <li>probably the most work</li>
+          <li>edit: <code>/blogs/:id/edit</code> </li>
+          <li>submitting the form to the right id + showing the information prefilled in the form </li>
+          <li>text area does not have a value attribute</li>
+          <li>HTML forms only support get or post requests - not put requests</li>
+          <li>workaround: by using the <strong>method override</strong> package (npm install)</li>
+          <li>adding this to the form action: <code>action="/blogs/<%= blog._id %>?_method=PUT" </code> </li>
+          <li>install with <code>npm install --save method-override</code> </li>
+          <li>make sure to require and use it: <code>app.use(methodOverride("_method"));</code> - the argument just tells our app to treat <code>_method</code> as a parameter </li>
+        </ul>
+
+        <li class="lecture">Lecture 318: destroy</li>
+        <ul>
+          <li>deleting a particular blog - have to use method override</li>
+          <li>need id in the path, then redirect somewhere else</li>
+          <li>btw: <strong>method override must use <code>method="post"</code> </strong> </li>
+        </ul>
+
+        <li class="lecture">Lecture 319/20: final touches</li>
+        <ul>
+          <li>sanitizing post - install sanitizer package: <code>npm install --save express-sanitizer</code> </li>
+          <li>to use it - must <code>use</code> it after <code>body parser</code> </li>
+
         </ul>
 
       </ul>
