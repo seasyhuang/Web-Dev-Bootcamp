@@ -241,13 +241,157 @@ cats
           <li>see detailed notes in <a href="introtonode/yelpcamp/v12/app.js">app.js</a> comments  </li>
           <li>how to delete everything: mongo - <code>db.collection.drop()</code> (ex - db.campgrounds.drop)</li>
           <li>campgrounds.ejs should be renamed index.ejs</li>
-
-
         </ul>
-
-
       </ul>
 
+      <h1 class="my-3 text-info">Section 31: RESTful routing </h1>
+      <ul>
+        <li class="lecture">Lecture 309: intro to REST</li>
+        <ol>
+          <li><a href="RESTfulrouting/blogapp">blogapp folder</a> </li>
+          <li><a href="RESTfulrouting/blogapp/app.js">app.js</a> </li>
+        </ol>
+        <ul>
+          <li>a convention - for maaping our HTTP routes to CRUD (create, read, update, destroy) functionality</li>
+          <li>a pattern for naming the routes (ex. read: <code>/dogs:/id</code>, etc)</li>
+          <li>the focus of this section is the routes (he uses semantic UI instead of booststrap to show a different CSS framework)</li>
+          <li><a href="chart.html">the 7 RESTful routes - chart.html</a> </li>
+          <ul>
+            <li>INDEX - <code>/dogs</code> - GET </li>
+            <li>NEW - <code>/dogs/new</code> - GET </li>
+            <li>CREATE - <code>/dogs</code> - POST - create a new dog, then redirect somewhere</li>
+            <li>SHOW - <code>/dogs/:id</code> - GET - takes 1 ID and shows all the information about one specific dog </li>
+            <li>EDIT - <code>/dogs/:id/edit</code> - GET - shows edit form for one dog</li>
+            <li>UPDATE - <code>/dogs/:id</code> - PUT - update a particular dog, then redirect somewhere</li>
+            <li>DESTROY - <code>/dogs/:id</code> - DELETE - in a form, send delete request to delete a particular dog, then redirect somewhere</li>
+          </ul>
+          <li>the routes that aren't <code>get</code> requests redirect </li>
+          <li>notice that some paths are the same, but they're fundamentally different because the HTTP verb (get, put, etc) is different</li>
+        </ul>
+
+        <li class="lecture">Lecture 310: RESTful blog app: INDEX</li>
+        <ol>
+          <li><a href="RESTfulrouting/blogapp">blogapp folder</a> </li>
+          <li><a href="RESTfulrouting/blogapp/app.js">app.js</a> </li>
+          <li><a href="RESTfulrouting/blogapp/views/index.ejs">app.js</a> </li>
+        </ol>
+        <ul>
+          <li>we will be using the framework <a href="https://semantic-ui.com/">semantic ui</a></li>
+        </ul>
+
+        <li class="lecture">Lecture 311/2: blog layout</li>
+        <ul>
+          <li>header and footer</li>
+          <li>adding <a href="https://semantic-ui.com/introduction/getting-started.html#install-semantic-ui">semantic ui</a> </li>
+          <li>semantic ui is organized bby component - you can get the CDN of just a component - but we want all of it, so <code>semantic.min.css</code> </li>
+          <li>CDN: <code>< link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" ></code> </li>
+          <li>navbar in semanti ui is <code>menu</code> </li>
+          <li>remember: to add our own stylesheets, it's better to put: <code>/public/stylesheets/app.css</code> - <a href="RESTfulrouting/blogapp/public/stylesheets/app.css">app.css</a> </li>
+        </ul>
+
+        <li class="lecture">Lecture 313/14: blog layout</li>
+        <ul>
+          <li>in this lecture: Colt introduces a new format for sending data to the server from a form.</li>
+          <li>Up to this point you have used the name attribute like so: <code>input type="text" name="title"</code> - now, it will be written like this: <code>input type="text" name="blog[title]"</code> </li>
+          <li>What this will do is, instead of making the value for title available directly from <code>req.body.title</code> it will put it inside of an object, like so: <code> req.body.blog.title</code> </li>
+          <li>Now all of the values from the inputs in the form get added into one object (<code>req.body.blog</code>) and you can easily input that data into the database simply by passing in <code>req.body.blog</code> to <code>Blog.create()</code> </li>
+          <li>we use the syntax: <code>name="blog[title]"</code> because it's specific to body-parser </li>
+          <hr>
+          <li>routes in this video: <code>new</code> (get to <code>/blogs/new</code>) and <code>create</code> (post to <code>/blog</code>)</li>
+        </ul>
+
+        <li class="lecture">Lecture 315/6: show</li>
+        <ul>
+          <li>get request: blogs/id</li>
+          <li>note: to show html vs just text:</li>
+          <ul class="inner">
+            <li><code><%- blog.body %></code> runs html, <code><%= blog.body %></code> shows just the text</li>
+          </ul>
+          <li>built into js: <code><%= blog.created.toDateString() %></code> </li>
+          <li>review: <code><%= blog.body.substring(0,100) + "..." %></code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 317: edit and update</li>
+        <ul>
+          <li>probably the most work</li>
+          <li>edit: <code>/blogs/:id/edit</code> </li>
+          <li>submitting the form to the right id + showing the information prefilled in the form </li>
+          <li>text area does not have a value attribute</li>
+          <li>HTML forms only support get or post requests - not put requests</li>
+          <li>workaround: by using the <strong>method override</strong> package (npm install)</li>
+          <li>adding this to the form action: <code>action="/blogs/<%= blog._id %>?_method=PUT" </code> </li>
+          <li>install with <code>npm install --save method-override</code> </li>
+          <li>make sure to require and use it: <code>app.use(methodOverride("_method"));</code> - the argument just tells our app to treat <code>_method</code> as a parameter </li>
+        </ul>
+
+        <li class="lecture">Lecture 318: destroy</li>
+        <ul>
+          <li>deleting a particular blog - have to use method override</li>
+          <li>need id in the path, then redirect somewhere else</li>
+          <li>btw: <strong>method override must use <code>method="post"</code> </strong> </li>
+        </ul>
+
+        <li class="lecture">Lecture 319/20: final touches</li>
+        <ul>
+          <li>sanitizing post - install sanitizer package: <code>npm install --save express-sanitizer</code> </li>
+          <li>to use it - must <code>use</code> it after <code>body parser</code> </li>
+        </ul>
+      </ul>
+
+      <h1 class="my-3 text-info">Section 32: data associations </h1>
+      <ul>
+        <li class="lecture">Lecture 321: introduction to associations</li>
+        <ul>
+          <li>one:one, one:many, many:many associations</li>
+          <li>ex: user post photo albums comments tags likes</li>
+          <li>one:many - user uploads many photos, but photos only have one uplaoder</li>
+          <li>many:many - many students can sign up for many courses </li>
+        </ul>
+
+        <li class="lecture">Lecture 322: embedded data</li>
+        <ul>
+          <li>embedding data in mongoose</li>
+          <li>see <a href="/associations/embed.js">embed.js</a> </li>
+          <li>to have a one to many association (ex. user to posts), we need to include the many in the schema of the one</li>
+          <li>so including <code>posts: [postSchema]</code> in the userSchema </li>
+          <li>to get just one user: <code>User.findOne(</code> otherwise array is returned </li>
+        </ul>
+
+        <li class="lecture">Lecture 323/4: object references</li>
+        <ul>
+          <li>another way of associating data</li>
+          <li>see <a href="/associations/references.js">references.js</a> </li>
+          <li>referencing data vs embedding data:</li>
+          <ul class="inner">
+            <li>we had a posts array connect to users</li>
+            <li>instead, we're going to have an array of IDs of posts - storing IDs instead of embedding the entire post</li>
+          </ul>
+          <li>to make an array of post IDs, not posts, use this:</li>
+          <ul class="inner">
+            <li>code: <code>posts: [{
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "Post",
+            }]</code> </li>
+          </ul>
+          <li>how to find all the posts for a user: <code>User.findOne({name:"bob"}).populate("posts").exec(function(err, user){ ... </code> </li>
+          <li>ok this doesn't really work in the terminal?</li>
+        </ul>
+
+        <li class="lecture">Lecture 325: module exports</li>
+        <ol>
+          <li><a href="/associations/references.js">references.js</a> </li>
+          <li><a href="/associations/models/post.js">post.js</a> </li>
+          <li><a href="/associations/models/user.js">user.js</a> </li>
+        </ol>
+        <ul>
+          <li>cleaning up our code and making it more modular - don't need code duplication</li>
+          <li>new <code>models</code> directory </li>
+          <li>make a <code>post.js</code> and <code>user.js</code> </li>
+          <li>export at the end of the module using <code>module.exports = Post;</code> (example - <a href="/associations/models/post.js">post.js</a>) </li>
+          <li>how to include in <code>references.js</code>: using <code>var Post = require("./models/post");</code> </li>
+        </ul>
+
+      </ul>
 
 
     </div>
