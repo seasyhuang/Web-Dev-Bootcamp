@@ -148,7 +148,6 @@
       </ul>
       </ul>
 
-
       <h1 class="my-3 text-info">Section 29: Databases </h1>
       <ul>
         <li class="lecture">Lecture 298: what is a database?</li>
@@ -392,6 +391,60 @@ cats
         </ul>
 
       </ul>
+
+      <h1 class="my-3 text-info">Section 33: YelpCamp </h1>
+      <ul>
+        <li class="lecture">Lecture 326: YelpCamp Refactoring App.js</li>
+        <li class="lecture">Lecture 327: YelpCamp seeding the database</li>
+        <ol>
+          <li><a href="introtonode/yelpcamp/v3/">YelpCamp v3</a></li>
+          <li><a href="introtonode/yelpcamp/v3/seeds.js">seeds.js</a></li>
+        </ol>
+        <ul>
+          <li>adding comments to YelpCamp</li>
+          <li>start with a <strong>seeds file</strong> - to see the db with some content (sample data)</li>
+        </ul>
+        <li class="lecture">Lecture 329/30: YelpCamp Comment Model</li>
+        <ul>
+          <li>displaying our comments in the show route (<a href="introtonode/yelpcamp/v3/app.js"></a>)</li>
+        </ul>
+        <li class="lecture">Lecture 321-33: YelpCamp creating Comments</li>
+        <ol>
+          <li><a href="introtonode/yelpcamp/v4/">YelpCamp v4</a></li>
+          <li><a href="introtonode/yelpcamp/v4/app.js">app.js (v4)</a></li>
+        </ol>
+        <ul>
+          <li>nested routes</li>
+          <ul class="inner">
+            <li>review of restful routes: index (<code>/campgrounds</code>), new (<code>/campgrounds/new</code>), create (<code>/campgrounds</code>), show (<code>/campgrounds/:id</code>)</li>
+            <li>new: <code>campgrounds/:id/comments/new</code>  GET </li>
+            <li>create: <code>campgrounds/:id/comments</code>  post </li>
+            <li>nested routes for new and create for comments</li>
+          </ul>
+          <li>we're going to add 2 new directories to divide the views folder</li>
+          <ul class="inner">
+            <li>need to change the links to the partials (add <code>../</code>)</li>
+            <li>another way of submitting form data: in the <code>input</code>, set <code>name="comment[text]"</code> in square brackets, and we will send back the entire <code>comment</code> object </li>
+            <li>access in app.js with <code>console.log(req.body.comment);</code> </li>
+          </ul>
+          <li>route for form</li>
+          <li>new comment form</li>
+          <li>in the show template - adding a button to get to new comment page</li>
+        </ul>
+
+        <li class="lecture">Lecture 334-6: YelpCamp Styling Comments</li>
+        <ol>
+          <li><a href="introtonode/yelpcamp/v5/">YelpCamp v5</a></li>
+          <li><a href="introtonode/yelpcamp/v5/app.js">app.js (v5)</a></li>
+        </ol>
+        <ul>
+          <li>styling the show page</li>
+        </ul>
+
+
+
+      </ul>
+
 
     </div>
 
