@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="notes-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>Authentication Notes</title>
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <iframe src="notes-navbar4.html" frameborder="0" width="100%" height="70px"></iframe>
+
+    <div class="container">
+      <div class="jumbotron pl-5">
+        <h1 class="display-2 text-info">Authentication</h1>
+        <h2 class="display-5">Section 34-35</h2>
+      </div>
+
+      <ul>
+        <li class="lecture">Lecture 337/8: intro to Authentication</li>
+        <ul>
+          <li>first: overview of concepts, then we'll be using existing tools </li>
+          <li>deep dive into user authetication at the end of this course</li>
+          <li>tools: <a href="http://www.passportjs.org/">passportjs</a>, <a href="https://github.com/jaredhanson/passport-local">passport-local</a>, <a href="https://github.com/saintedlama/passport-local-mongoose">passport local mongoose</a></li>
+          <ul class="inner">
+            <li><strong>strageties</strong> are types of authetication: password, logging in through facebook, etc</li>
+            <li>"local" authentication is user username/pw</li>
+          </ul>
+          <li>walk through auth follow</li>
+          <li>discuss sessions - express session</li>
+          <ul class="inner">
+            <li>staying logged in - need sessions</li>
+            <li>providing a state to http - making it <strong>not</strong> stateless</li>
+            <li>sessions - allow us to have states in our http request</li>
+            <li>every time you send a request - sending a piece of information saying that it's you who's logged in</li>
+          </ul>
+          <li>barebones demo</li>
+        </ul>
+
+        <li class="lecture">Lecture 339-4: secret page code along</li>
+        <ol>
+          <li><a href="authetication/authdemo">authdemo folder</a> </li>
+        </ol>
+        <ul>
+          <li><code>npm init</code>, installed <code>npm install mongoose body-parser express-session express mongoose passport passport-local passport-local-mongoose ejs</code>  </li>
+          <li>set up views, models, and some routes</li>
+          <li>in <code>app.use(require("express-session")({...</code>, there is <code>secret</code> - used to encode and decode the session - can be anything</li>
+            <li>two methods: <code>serializeUser</code> and <code>deserializeUser</code> - important for reading the session and taking the data from the session that's encoded and unencode it / vice versa</li>
+            <li>we don't have to define <code>User.serializeUser()</code> on our own because we're using the built in methods (in the user.js file) from passportLocalMongoose (<code>UserSchema.plugin(passportLocalMongoose);</code>)</li>
+            <li>routes and forms:</li>
+            <ul class="inner">
+              <li>register routes and form</li>
+              <li>recall that the form action goes to the post route - conventionally named the same as the get route</li>
+              <li><code>form action="/register" method="post"</code> </li>
+              <li>remember: to get <code>req.body.username;</code>, need to do <code>app.use(bodyParser.urlencoded({extended:true})); at the top</code> </li>
+              <li><code>User.register(new User({username: req.body.username}), req.body.passwor, function(err, user){</code> - we make a new user object not saved to the db, and we only pass in username. we don't save the pw to the db - pass it as the second argument to <code>User.register</code> </li>
+              <li>which takes the pw and hashes it, then returns a new user with everything inside it (u, hashed pw)</li>
+              <li>this line here: <code>  passport.authenticate("local")(req, res, function(){
+                res.redirect('/secret');
+              });</code> will do all the saving to the db using the <code>local</code> strategy </li>
+              <li>you can see the user in mongo - <code>authdemo</code> db </li>
+            </ul>
+            <li>login form and routes</li>
+            <ul class="inner">
+              <li>the <a href="authentication/authdemo/views/login.ejs">login form</a> should be the same as the registration form - only where it submits to changes: <code>form action="/login" method="post"</code> </li>
+              <li>in the <a href="authentication/authdemo/app.js">login post route</a>, we're using <code>passport.authenticate</code> as middleware, with <code>"/login"</code> as the first argument, <code>passport.authenticate("local", {
+                successRedirect: '/secret',
+                successRedirect: '/login'
+              })</code> as the second argument, and then our callback </li>
+              <li>middleware sits between the beginning and end of your route (handler)</li>
+              <li>password handling done by <code>passport</code> </li>
+            </ul>
+            <li>logout route and isLoggedIn middleware</li>
+            <ul>
+              <li>simple link to log out</li>
+              <li>we only need a <code>get</code> route and <code>req.logout();</code> - passport takes care of this for us</li>
+              <li>to make the <code>secret</code> route secret, we need the function <code>function isLoggedIn(req, res, next){</code>, which we will add in the secret route: <code>app.get("/secret", isLoggedIn, function(req, res){</code>    </li>
+            </ul>
+
+
+        </ul>
+
+
+
+
+      </ul>
+    </div>
+
+    <script src="eventlistener.js" charset="utf-8"></script>
+  </body>
+</html>
