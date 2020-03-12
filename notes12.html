@@ -124,6 +124,20 @@
         </ul>
       </ul>
 
+      <h1 class="my-3 text-info">Section 35: Authentication </h1>
+      <ul>
+        <li class="lecture">Lecture 349: refactoring routes</li>
+        <ul>
+          <li>we're on v7 now</li>
+          <li>new directory for routes</li>
+          <li>we're not going to declare an app var for every file - instead, use the express router: <code>var express = require('express');
+          var router = express.Router();</code>, then export at the end of the file <code>module.exports = router;</code> (campgrounds.js, etc) </li>
+          <li>then we add all the routes to <code>router</code> (instead of to app) </li>
+          <li>splitting code into multiple files means more requiring, but a lot cleaner</li>
+        </ul>
+
+      </ul>
+
 
     </div>
 
