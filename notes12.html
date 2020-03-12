@@ -134,7 +134,34 @@
           var router = express.Router();</code>, then export at the end of the file <code>module.exports = router;</code> (campgrounds.js, etc) </li>
           <li>then we add all the routes to <code>router</code> (instead of to app) </li>
           <li>splitting code into multiple files means more requiring, but a lot cleaner</li>
+          <li>we can clean the individual routes more - reduce duplication when we require them in our app.js</li>
+          <li>change <code>app.use(commentRoutes);</code> to <code>app.use("/campgrounds", campgroundRoutes);</code> </li>
+          <li>more complicated with comments: need to add <code>var router = express.Router({mergeParams: true});</code> to <a href="introtonode/yelpcamp/v7/routes/comments.js">comments.js</a> </li>
         </ul>
+        <li class="lecture">Lecture 349: user associations: comment</li>
+        <ul>
+          <li>associating user and comment models - when you create a new comment, automatically associated with user ID/name</li>
+          <li><a href="introtonode/yelpcamp/v8">version 8</a> </li>
+          <li>in the comments model, change author from string to an object</li>
+          <li>we don't want to just save the whole user object to the author - would save the has h and salt</li>
+          <li>changes made in <a href="introtonode/yelpcamp/v8/models/comment.js">comment.js</a> </li>
+          <li>changes made in <a href="introtonode/yelpcamp/v8/models/comment.js">comment.js model</a> and <a href="introtonode/yelpcamp/v8/routes/comments.js">comments.js comments create route</a> - then on the campgrounds show view, we change <code>comment.author</code>, which was previously a string, to <code><%= comment.author.username%></code> because author is now an object </li>
+        </ul>
+
+        <li class="lecture">Lecture 349: user associations: campgrounds</li>
+        <ul>
+          <li>we don't want people to make a new campground without signing in</li>
+          <ul class="inner">
+            <li>preventing non logged in people from making campgrounds</li>
+            <li>protect the post and get routes in <a href="introtonode/yelpcamp/v8/routes/campgrounds.js">campgrounds.js route</a> </li>
+          </ul>
+          <li>we also want to show who created which campground</li>
+          <ul class="inner">
+            <li>now do the same thing to campground schema as we did last lecture to the user schema</li>
+          </ul>
+        </ul>
+
+
 
       </ul>
 
