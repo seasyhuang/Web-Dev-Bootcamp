@@ -252,8 +252,69 @@
       </ul>
 
       <h1 class="my-3 text-info">Section 38: Yelpcamp UI improvements</h1>
+      <ul>
+        <li class="lecture">Lecture 362: refactoring middleware</li>
+        <ul>
+          <li>new index.js file in new middleware directory</li>
+          <li>special syntax: if we require just a directory, then the index.js is automatically required</li>
+          <li>so we do: <code>var middleware = require("../middleware");</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 363: flash message installation</li>
+        <ol>
+          <li><a href="introtonode/yelpcamp/v11/">YelpCamp v11</a></li>
+          <li><a href="https://github.com/jaredhanson/connect-flash">express-flash</a> </li>
+        </ol>
+        <ul>
+          <li>show a message to a user</li>
+          <li>install and configure <code>connect-flash</code> </li>
+          <li>add bootstrap alerets to header - built in bootstrap styling</li>
+          <li>then we need to npm install, require, and use <code>flash</code> </li>
+          <li>in the header, we display the flash message</li>
+          <li>example usage (in middleware <a href="introtonode/yelpcamp/v11/middleware/index.js">index.js</a>): <code>res.flash("error", "Please login first!");</code> - adding this line doesn't display anything, it only makes it accessible in the next request </li>
+          <li>handle in this during the login route - <a href="introtonode/yelpcamp/v11/routes/index.js">index.js</a> (and add the message in the login.ejs)</li>
+          <li>note: <code>app.use(flash());</code> must come <em>before</em> passport configuration in app.js </li>
+        </ul>
+
+        <li class="lecture">Lecture 364/5: flash message bootstrap</li>
+        <ol>
+          <li><a href="https://getbootstrap.com/docs/4.0/components/alerts/">Bootstrap alerts</a> </li>
+        </ol>
+        <ul>
+          <li>we can move the message into the header instead of the login route</li>
+          <li>refactoring needed so every other page that uses the header won't error</li>
+          <li>in middleware for user, we add <code>res.locals.message = req.flash("error");</code> </li>
+          <li>then, we can use <code>req.flash("error", "Logged you out!");</code> (example) in any route, and it'll appear in the <a href="introtonode/yelpcamp/v11/views/partials/header.ejs">header</a> </li>
+          <li>flash is great because we can send a message once to a user</li>
+          <li>note that in the line <code>req.flash("success", "Logged you out!");</code>, the "success" could be anything - this is simply the key that we add it into flash as </li>
+          <li>so in our user middleware (app.js), we have two lines: <code>res.locals.error = req.flash("error");
+          res.locals.success = req.flash("success");</code> </li>
+          <li>differentiate in the header as well, and add logic </li>
+        </ul>
+
+        <li class="lecture">Lecture 366/7: helpful errors</li>
+        <ul>
+          <li>fixing all the routes to have helpful error messages</li>
+          <li>using <code>req.flash("error", err.message);</code> - "error"/"success", our own error message/err.message.err </li>
+        </ul>
+
+        <li class="lecture">Lecture 368/9: landing page refactor</li>
+        <ol>
+          <li><a href="https://github.com/nax3t/background-slider">Github Tutorial</a> </li>
+        </ol>
+        <ul>
+          <li>background slider image that fade into each other</li>
+          <li>still using v11</li>
+        </ul>
+
+        <li class="lecture">Lecture 370/1: dynamic price feature</li>
+        <ul>
+          <li>changing the $9.00/night - edit model so we can store a value in our cg</li>
+          <li>for more yelpcamp improvements/additions: <a href="https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6754188#questions">list of tutorials here</a> </li>
+        </ul>
 
 
+      </ul>
 
 
     </div>
