@@ -31,16 +31,15 @@ var times = [
   // "42min",        // w/26
   // "1hr 57min",        // th/27
   // "39min",        // f/28
-  "1hr 17min",        // s/29
-  "59min",        // s/1
-  "40min",        // m/2
-  "44min",        // t/3
+  // "1hr 17min",        // s/29
+  // "59min",        // s/1
+  // "40min",        // m/2
+  // "44min",        // t/3
   "1hr 25min",        // w/4
   "1hr 20min",        // th/5
   "52min",        // f/6
   "1hr 11min",        // s/7
   "1hr 3min",       // s/8
->>>>>>> df4c2bc61284fb92c029652c5bffe208ba66c6cc
 ]
 
 function addTimes(array) {

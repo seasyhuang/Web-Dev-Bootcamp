@@ -19,8 +19,8 @@
 
     <div class="container">
       <div class="jumbotron pl-5">
-        <h1 class="display-2 text-info">Authentication</h1>
-        <h2 class="display-5">Section 34-35</h2>
+        <h1 class="display-2 text-info">Authentication & Authorship</h1>
+        <h2 class="display-5">Section 34-38</h2>
       </div>
 
       <ul>
@@ -164,6 +164,96 @@
 
 
       </ul>
+
+      <h1 class="my-3 text-info">Section 37: Yelpcamp edit and delete</h1>
+      <ul>
+        <li class="lecture">Lecture 352: new yelpcamp features</li>
+        <ul>
+          <li>adding crud abilities for campground</li>
+          <li>then add permissions and auth</li>
+        </ul>
+
+        <li class="lecture">Lecture 353: campground edit and update</li>
+        <ol>
+          <li><a href="introtonode/yelpcamp/v10/">YelpCamp v10</a></li>
+        </ol>
+        <ul>
+          <li>editing campground button - takes to form, then update campground route</li>
+          <li>no permissions or auth yet</li>
+          <li>add method-override </li>
+          <li>edit route:</li>
+          <li>made edit form (view) from the new form</li>
+          <li>remember that with put requests, we need <code>?_method=PUT</code> at the end of the form action (method is still post)</li>
+          <li>remember that you can auto fill information by replacing the form <code>placeholder</code> to <code>value</code> </li>
+          <li>update route:</li>
+          <li>need to put <code>router.put("/:id",</code> ... </li>
+          <li>note that we wrapped everything in the <code>campground[...]</code> in the edit.ejs form, so when we submit to <code>Campground.findByIdAndUpdate</code>, use <code>req.params.id, req.body.campground, function(err, updatedCG){...}</code> </li>
+          <li>add a button on the show page for edit </li>
+        </ul>
+
+        <li class="lecture">Lecture 354: campground destroy</li>
+        <ul>
+          <li>deleting campgrounds</li>
+          <li>write a form that sends a delete request to that url</li>
+          <li>this puts delete and edit on separate lines - give it a display properly of inline</li>
+          <li>put the button in the show page in a form, use method override to set as delete</li>
+        </ul>
+
+        <li class="lecture">Lecture 355-7: campground destroy authorization</li>
+        <ul>
+          <li>combine user model with authorization</li>
+          <li>not authentication</li>
+          <li>user can only edit/delete their campgrounds</li>
+          <ul class="inner">
+            <li>if we try to go to edit route, we need to check if cur user id matches id of author of campground </li>
+            <li>changing the logic of campgrounds.js</li>
+            <li>logic --> <code>checkCampgroundOwnership</code> middleware</li>
+            <li>new function: <code>res.redirect("back");</code> </li>
+            <li>checking equals: <code>if (foundCampground.author.id.equals(req.user._id)) {</code> </li>
+          </ul>
+          <li>hide/show edit and delete buttons</li>
+          <ul class="inner">
+            <li>in the show template, add if statement</li>
+            <li>make sure that a user is logged in AND that the user is the author:</li>
+            <li><code><% if(currentUser && campground.author.id.equals(currentUser._id)){ %></code> </li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 358: comment edit and update</li>
+        <ul>
+          <li>edit and update routes for comments</li>
+          <ul class="inner">
+            <li>edit is a get request</li>
+            <li>copy over view from new comment view</li>
+            <li>we need campground id and comment object passed into the route</li>
+            <li><code>campground_id</code> is found in <code>req.params.id</code> - id refers to the campground id </li>
+          </ul>
+          <li>edit button</li>
+          <ul class="inner">
+            <li>nested route: <code>/campgrounds/:id/comments/:comment_id/edit</code> - but all we have to write is <code>:comment_id/edit</code> </li>
+          </ul>
+          <li>add update route - pretty much same as campground but with nested routes</li>
+        </ul>
+
+        <li class="lecture">Lecture 359-60: comment destroy</li>
+        <ul>
+          <li>add destroy route:</li>
+          <li>Campground destroy route: <code>/campground/:id</code> </li>
+          <li>Comment destroy route: <code>/campground/:id/comments/:comment_id</code> </li>
+          <li>add delete button: almost the same as the campground delete - just changed form action <code>action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 361: comment authorization</li>
+        <ul>
+          <li>user can only edit/delete their own comments</li>
+          <li>hide/show edit and delete buttons</li>
+          <li>both very similar to what we did for campground (see above)</li>
+        </ul>
+      </ul>
+
+      <h1 class="my-3 text-info">Section 38: Yelpcamp UI improvements</h1>
+
+
 
 
     </div>
