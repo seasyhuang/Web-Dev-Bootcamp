@@ -23,9 +23,52 @@
         <h2 class="display-5">Section 39-41</h2>
       </div>
 
+      <ul>
+        <li class="lecture">Lecture 372: Git and github</li>
+        <ul>
+          <li>version control</li>
+          <li>hard to understand the utility of git when you're starting out/on your own</li>
+          <li>what is git - the technology</li>
+          <li>what is Github - the website</li>
+          <li>why should you care -  many developers use, popular</li>
+          <li>novel writing analogy: imagine you're a writer - have many versions and save them, like save checkpoint </li>
+          <li>with git, you can save different versions of multiple files </li>
+          <li>installing git: to check if git is installed, you can do <code>git --version</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 373: git init, add, and commit</li>
+        <ul>
+          <li><code>git init</code> - manually tell git to track the folder and all folders/files in the folder</li>
+          <li>accidentially init a .git, use <code>rm -rf</code> on the .git file </li>
+          <li><code>git add</code> - tells git which files to add to the commit (select files for commit)</li>
+          <li><code>git commit -m</code> - what is the commit and the message going with the commit </li>
+          <li>traditionally git commits are in the present tense</li>
+        </ul>
+
+        <li class="lecture">Lecture 374: git log, checkout</li>
+        <ul>
+          <li><code>git log</code> - history of all commits, escape using <code>q</code> </li>
+          <li>the git hash is the most important part: <code>commit 27c7357277160a99f2bbd6975d5f095e35194d2a</code> (example) </li>
+          <li>go to back to that commit, you can do <code>git checkout 27c7357277160a99f2bbd6975d5f095e35194d2a</code> - it may tell you that there are untracked changes. you can commit these changes (that's where master is), then do git checkout again</li>
+          <li>you will no longer be on master - HEAD is like a pointer in times, and it will now be at the 27c73.... commit: the head is now detached from master</li>
+          <li>usually when we check out, it's to look at some old code and then go back to master</li>
+          <li>but sometimes you want to go back to an old commit and revert to that commit</li>
+          <li>one way of reverting: <code>git revert --no-commit 27c7357277160a99f2bbd6975d5f095e35194d2a..HEAD</code> </li>
+          <li>then commit your changes (don't need to add) <code>git commit -m "reverted back to ..."</code> </li>
+          <li>this method doesn't delete everything: you can still access/see old "deleted" changes with git log</li>
+        </ul>
+
+        <li>** note</li>
+        <ul>
+          <li>this section is not completed yet (March 15 2020), but <a href="https://www.youtube.com/watch?v=LemSseuZB9I&list=PL86ehqHzxhy4XX_qZZE_5mrp38WGZRzTO">youtube tutorial here</a> </li>
+        </ul>
+
+
+      </ul>
+
+
 
     </div>
-
     <script src="eventlistener.js" charset="utf-8"></script>
   </body>
 </html>
