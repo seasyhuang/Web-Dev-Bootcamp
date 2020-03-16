@@ -62,9 +62,84 @@
         <ul>
           <li>this section is not completed yet (March 15 2020), but <a href="https://www.youtube.com/watch?v=LemSseuZB9I&list=PL86ehqHzxhy4XX_qZZE_5mrp38WGZRzTO">youtube tutorial here</a> </li>
         </ul>
+      </ul>
+
+      <h1 class="my-3 text-info">Section 40: Deploying</h1>
+      <ul>
+        <li class="lecture">Lecture 376: heroku</li>
+        <ul>
+          <li>running code on someone else's server</li>
+          <li>get our application on heroku servers and get it to run on another computer on another server</li>
+          <li>first with a simple app, then yelpcamp</li>
+        </ul>
+
+        <li class="lecture">Lecture 377-9: deploying a simple app</li>
+        <ol>
+          <li><a href="deplyingdemo">(very simple) deplying demo</a></li>
+        </ol>
+        <ul>
+          <li>the <code>--save</code> in <code>npm install --save</code> is very important here for deplying</li>
+          <li>we need to sign up on <a href="https://www.heroku.com/">heroku</a> </li>
+          <li>may need to use <code>heroku login -i</code> </li>
+          <li>after logging in, git init new repo (git init, add .,  commit -m "initial commit")</li>
+          <li>run <code>heroku create</code>, will create a random name </li>
+          <li>need to associate your code with heroku: heroku created a new git remote ("https://git.heroku.com/limitless-spire-24915.git") </li>
+          <li>when you run <code>git remote -v</code>, you can see the new branch </li>
+          <li>to associate: <code>git push heroku master</code>, lots of code in the terminal will follow </li>
+          <li>however when we go to https://limitless-spire-24915.herokuapp.com/ now, it will show an error </li>
+          <li>to see the error: > <code>heroku logs</code> </li>
+          <li>we don't have a "start script" - equivalent of <code>node app.js</code> </li>
+          <li>so we need to add <code>"start": "node app.js"</code> to our package.json in the <code>scripts</code> </li>
+          <li>after that, git add, commit, and push master to heroku</li>
+          <li>note: need to use: <code>const PORT = process.env.PORT || 3000;
+          app.listen(PORT, () => {
+              console.log(`Our app is running on port ${ PORT }`);
+          });</code> for app.listen</li>
+        </ul>
+
+        <li class="lecture">Lecture 380-2: deplying yelpcamp</li>
+        <ol>
+          <li><a href="introtonode/yelpcamp/v11deployed/">YelpCamp v11 for deploying</a></li>
+          <li><a href="introtonode/yelpcamp/v11deployed/app.js">app.js</a></li>
+        </ol>
+        <ul>
+          <li>this is more complicated because we need to get the database on heroku</li>
+          <li>created at <code>https://secure-ridge-50520.herokuapp.com/ | https://git.heroku.com/secure-ridge-50520.git</code> </li>
+          <li>didn't handle any db stuff, so we will get an error</li>
+          <li>we can run terminal commands in the heroku container, example: <code>heroku run ls</code> </li>
+          <li>Important Update: mLab (mongolab) is now MongoDB Atlas, please see <a href="https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/4474078#questions/6345892">here</a> for written instructions or <a href="https://www.youtube.com/watch?v=iJtOoeM_fS8&feature=youtu.be&t=368">here</a> for a video (detailing how to set up and use MongoDB Atlas with Node (Express)).</li>
+          <li>we need a hosted mongo db - using <a href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a></li>
+          <li>welcome - click on build my first cluster - create, then wait for cluster to be created</li>
+          <li>click "connect", then whitelist your ip address</li>
+          <li>create a mongodb user</li>
+          <li>connect to apllication with a "connection string" - copy this</li>
+          <li>in the <a href="introtonode/yelpcamp/v11deployed/app.js">app.js</a>, add <code>mongoose.connect("[copied string]")</code>, changing the password to your password and <code>retryWrites=false</code> </li>
+        </ul>
+
+        <li class="lecture">Lecture 383: environment variables</li>
+        <ul>
+          <li>good to separate variables between local version and deployed version</li>
+          <li>*** need to add <code>0.0.0.0/0</code> to mongodb atlas whitelist </li>
+          <li>had a bug: changed port to 80 (was previously 3000)</li>
+          <li>ex. between mongodb and mongodb atlas</li>
+          <li>environment variables - refer to the environment in which the code is run: adding variables that aren't constant</li>
+          <li>always start with <code>process.env</code> </li>
+          <li>we'll create an environment variable (convention is to do it in all caps)</li>
+          <li>in the command line: <code>export DATABASEURL=mongodb://localhost:27017/yelp_camp_v11</code> </li>
+          <li>then, if we go into app.js and <code>console.log(process.env.DATABASEURL);</code>, it should print <code>mongodb://localhost:27017/yelp_camp_v11</code> </li>
+          <li>we can locally run <code>mongoose.connect(process.env.DATABASEURL);</code> with no problems</li>
+          <li>however, this won't work on heroku: env variable is not set there</li>
+          <li>go to heroku and add the variable in settings --> config vars (this can be done in the command line too)</li>
+          <li>another good reason for using env var: they're hidden, and when you put your code online, no problem </li>
+          <li>now, <strong>locally</strong> we have the local mongo db associated with yelpcamp (need to have mongod, mongo open in command line) </li>
+          <li>on <strong>heroku</strong>, we have our mongodb atlas associated with our deployed yelpcamp </li>
+
+        </ul>
+
 
 
       </ul>
+
 
 
 
