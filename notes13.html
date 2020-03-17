@@ -133,12 +133,74 @@
           <li>another good reason for using env var: they're hidden, and when you put your code online, no problem </li>
           <li>now, <strong>locally</strong> we have the local mongo db associated with yelpcamp (need to have mongod, mongo open in command line) </li>
           <li>on <strong>heroku</strong>, we have our mongodb atlas associated with our deployed yelpcamp </li>
+        </ul>
+      </ul>
 
+      <h1 class="my-3 text-info">Section 41: more javascript stuff</h1>
+      <ul>
+        <li class="lecture">Lecture 384-9: Keyword This</li>
+        <ul>
+          <li>the keyword <code>this</code> </li>
+          <li>(1) in the global context: <code>this</code> refers to the window object - the global object </li>
+          <ul class="inner">
+            <li>in the global context: inside a function, the keyword <code>this</code> is still the window object </li>
+            <li>what happens when we attach properties to <code>this</code> in the global context - anything we attach to it has global scope, but this is <strong>bad practice</strong> </li>
+            <li><em>it is good practice</em> to declare all variables we want to use at the start of the code, and assign the values at a later time in the code</li>
+            <li>strict mode: use with <code>"use strict"</code> at the start of the code - stops developers from accidentally adding properties to global <code>this</code> - value becomes undefined</li>
+          </ul>
+          <li>(2) implicit/object: inside a function, for example: <code>var person = { first: "Elie", sayHi: function() { return "Hi " + this.first } }</code>, <code>person.sayHi()</code> returns <code>"Hi Elie"</code> </li>
+          <ul class="inner">
+            <li>becomes complicated with nested objects, for example a dog object in the person object</li>
+            <li>using <code>this</code> in the dog object would refer to the dog - always refers to the parent object</li>
+            <li><strong>when the keyword this is inside a declared object, its value will always be the closest parent object</strong> </li>
+            <li>if the dog object had no <code>first</code> property, then calling <code>sayHi()</code> from within the dog objet would return <code>"Hi [undefined]"</code> </li>
+            <li>how to fix this: the <strong>call apply bind</strong> methods</li>
+            <li>to set the keyword <code>this</code> to only refer to the <code>person</code> object </li>
+          </ul>
+          <li>(3) explicit binding: </li>
+          <ul class="inner">
+            <li>these three methods can only be used by functions</li>
+            <li>(1) <code>call</code> - many params: thisArg, a, b, ... , invoked immediately</li>
+            <ul class="inner">
+              <li>used in real life to 'borrow' functions that use <code>this</code> between objects (avoid duplication)</li>
+              <li>setting <code>this</code> in sayHello to refer to <code>person</code> object: <code>person.dog.sayHello.call(person);</code> - sayHello is not envoked, so no <code>()</code> </li>
+              <li>colt object and elie objects (<a href="intermediatejs.js">example</a>): <code>colt.sayHi.call(elie);</code> </li>
+            </ul>
+            <li>(2) <code>apply</code> - 2 params: thisArg, [a, b, ... ], invoked immediately </li>
+            <ul class="inner">
+              <li>the same as <code>call</code> until you start adding arguments</li>
+              <li>apply - 2 args (params passed as second array to 2nd arg)</li>
+              <li>see <a href="intermediatejs.js">example</a></li>
+            </ul>
+            <li>(3) <code>bind</code> - many params: thisArg, a, b, ... , invoked later - returns function definition that can be used at a later time</li>
+            <ul>
+              <li>returns function definition</li>
+              <li>don't need to know params, just <code>thisArg</code> </li>
+              <li>can use to set context of this for a function that will be called later in time</li>
+              <li>useful for asynchronous</li>
+              <li>"partial application"</li>
+              <li>setTimeout example: when the function is called later in time, <code>this</code> refers to the global this </li>
+              <li>see <a href="intermediatejs.js">example</a> (comments in the code)</li>
+            </ul>
+          </ul>
+          <li>(4) the keyword <code>new</code>: </li>
+          <ul class="inner">
+            <li>when the <code>new</code> keyword is used, an object is created out of thin air</li>
+            <li>see <a href="intermediatejs.js">example</a> (comments in the code)</li>
+          </ul>
+        </ul>
+
+        <li class="lecture">Lecture 39: OOP</li>
+        <ul class="inner">
+          <li>object oriented programming</li>
         </ul>
 
 
 
+
+        </ul>
       </ul>
+
 
 
 
