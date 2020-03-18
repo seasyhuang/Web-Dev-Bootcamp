@@ -190,12 +190,60 @@
           </ul>
         </ul>
 
-        <li class="lecture">Lecture 39: OOP</li>
+        <li class="lecture">Lecture 394-402: OOP</li>
         <ul class="inner">
+          <li>see <a href="oop.js">examples</a> (comments in the code)</li>
           <li>object oriented programming</li>
+          <li>constructor functions: a blueprint</li>
+          <li>capitalized for best practice</li>
+          <li>we need the <code>new</code> keyword  </li>
+          <ul class="inner">
+            <li>(1) it creates an empty object, (2) sets the keyword <code>this</code> to be that empty object, then (3) adds the line <code>return this</code> to the end of the function, and follows it </li>
+            <li>(4) it also adds a property onto the empty object called <code>__proto__</code> ("dunder proto"), which linkes the prototype property on the constructor function to the empty object (more on this later)</li>
+          </ul>
+          <li>multiple constructors:</li>
+          <ul class="inner">
+            <li>imagine two constructor functions, one for a Car and one for a Motorcycle</li>
+            <li>lots of code duplication </li>
+            <li>how to change the value of the keyword this? <code>call</code> or <code>apply</code> </li>
+            <li>note that you can get a list of the arguments passed into a function with <code>argument</code> </li>
+          </ul>
+          <li>prototypes:</li>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="inner">
+                <li>circle is a function, square is an object</li>
+                <li>person constructor function - has a prototype property (an object)</li>
+                <li>prototype has a constructor function</li>
+                <li>the dunder proto property <code>__proto__</code> links the new (any) object and prototype property of the constructor function</li>
+                <li>so if we change anything in the constructor (example <code> Person.prototype.isInstructor = true; </code>) </li>
+                <li>then all objects made with that constructor have access to the change</li>
+                <li><code>console.log(elie.isInstructor);</code> </li>
+                <li>use this to refactor code to be more efficient</li>
+                <li>instead of defining a function every time you make a new object, put it on the prototype</li>
+                <li>example: <code>Person.prototype.sayHi = function(){
+                  console.log("Hi " + this.name);
+                }</code> - note that <code>sayHi</code> does not have brackets </li>
+                <li>see <a href="oop.js">examples</a> (comments in the code)</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <img src="proto.png" class="align-center" style="width:500px;">
+            </div>
+          </div>
+          <li>recap:</li>
+          <ul class="inner">
+            <li>Every time the new keyword is used, a link between the object and the prototype property of the constructor is established - this link can be accessed using <code>__proto__</code> </li>
+            <li>the prototype object contains a peoperty called constructor, which points back to the constructor function</li>
+            <li>to share properties and methods for objects created by a constructor function, <strong>place them in the prototype</strong> - this is most efficient</li>
+          </ul>
         </ul>
 
-
+        <li class="lecture">Lecture 403: closures</li>
+        <ul>
+          <li><a href="closures.js">example of closures here</a> (comments in the code)</li>
+          <li>a defined function that makes use of variables defined in outer functions that have previously returned</li>
+        </ul>
 
 
         </ul>
